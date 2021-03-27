@@ -567,6 +567,6 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    queryRunner.dropTable("escolas");
+    await queryRunner.dropTable("escolas");
   }
 }
