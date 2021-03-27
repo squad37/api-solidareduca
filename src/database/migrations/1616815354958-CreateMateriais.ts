@@ -1,9 +1,4 @@
-import {
-  MigrationInterface,
-  QueryRunner,
-  Table,
-  UsingJoinColumnIsNotAllowedError,
-} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
 export class CreateMateriais1616815354958 implements MigrationInterface {
