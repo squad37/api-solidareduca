@@ -6,9 +6,13 @@ class ListEscolasController {
   constructor(private listEscolasUseCase: ListEscolasUseCase) {}
 
   async handle(request: Request, response: Response): Promise<Response> {
-    const escolas = await this.listEscolasUseCase.execute();
+    try {
+      const escolas = await this.listEscolasUseCase.execute();
 
-    return response.status(200).json(escolas);
+      return response.status(200).json(escolas);
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
   }
 }
 
