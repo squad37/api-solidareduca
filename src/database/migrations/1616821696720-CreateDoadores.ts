@@ -22,6 +22,7 @@ export class CreateDoadores1616821696720 implements MigrationInterface {
           {
             name: "pontos",
             type: "integer",
+            default: 0,
           },
           {
             name: "cep",
