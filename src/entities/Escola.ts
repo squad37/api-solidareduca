@@ -1,4 +1,10 @@
-import { Entity, PrimaryColumn, Column } from "typeorm";
+import {
+  Entity,
+  PrimaryColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
 @Entity("escolas")
@@ -72,10 +78,10 @@ class Escola {
   @Column()
   consultar_ideb: string;
 
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
 
-  @Column()
+  @UpdateDateColumn()
   updated_at: Date;
 
   constructor() {

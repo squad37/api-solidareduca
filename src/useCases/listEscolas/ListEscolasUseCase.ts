@@ -1,13 +1,13 @@
 import { getCustomRepository } from "typeorm";
 
-import { Escola } from "../../model/Escola";
+import { Escola } from "../../entities/Escola";
 import { EscolasRepository } from "../../repositories/EscolasRepository";
 
 class ListEscolasUseCase {
-  async execute(): Promise<Escola[]> {
-    const escolasRepository = getCustomRepository(EscolasRepository);
+  constructor(private escolasRepository: EscolasRepository) {}
 
-    const escolas = await escolasRepository.find();
+  async execute(): Promise<Escola[]> {
+    const escolas = await this.escolasRepository.list();
 
     return escolas;
   }

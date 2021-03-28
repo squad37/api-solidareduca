@@ -5,7 +5,7 @@
     "username": "postgres",
     "password": "1234",
     "database": "solidareduca",
-    "entities": ["./src/model/*.ts"],
+    "entities": ["./src/entities/*.ts"],
     "migrations": ["./src/database/migrations/*.ts"],
     "cli": {
         "migrationsDir": "./src/database/migrations"
