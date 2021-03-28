@@ -35,6 +35,11 @@ class AlunosRepository {
     const aluno = this.repository.findOne({ email });
     return aluno;
   }
+
+  async list(): Promise<Aluno[]> {
+    const alunos = this.repository.find();
+    return alunos;
+  }
 }
 
 export { AlunosRepository };
