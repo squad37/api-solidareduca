@@ -33,7 +33,7 @@ class CreateAlunosController {
 
       return response.status(201).send();
     } catch (error) {
-      return response.json({ error: error.message });
+      return response.status(400).json({ error: error.message });
     }
   }
 }
