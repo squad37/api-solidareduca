@@ -15,7 +15,7 @@ interface ICreateAlunoDTO {
 
 @EntityRepository(Aluno)
 class AlunosRepository {
-  repository: Repository<Aluno>;
+  private repository: Repository<Aluno>;
 
   constructor() {
     this.repository = getRepository(Aluno);
