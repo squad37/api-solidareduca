@@ -7,10 +7,6 @@
   <a href="#-Como-executar">Como executar</a>
 </p>
 
-<p align="center">
-  <img alt="Ignite" src="public/ignite-2560x1080.png">
-</p>
-
 ## 📙 Projeto
 
 **API** referente ao projeto **SolidarEduca** do **Programa de Formação FCamara**.
