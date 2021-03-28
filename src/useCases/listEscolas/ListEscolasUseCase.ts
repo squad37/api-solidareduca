@@ -1,5 +1,3 @@
-import { getCustomRepository } from "typeorm";
-
 import { Escola } from "../../entities/Escola";
 import { EscolasRepository } from "../../repositories/EscolasRepository";
 
