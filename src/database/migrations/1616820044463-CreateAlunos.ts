@@ -33,7 +33,7 @@ export class CreateAlunos1616820044463 implements MigrationInterface {
             type: "varchar",
           },
           {
-            name: "nome_responsável",
+            name: "nome_responsavel",
             type: "varchar",
             isNullable: true,
           },
