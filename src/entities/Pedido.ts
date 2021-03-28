@@ -40,6 +40,9 @@ class Pedido {
   doador: Doador;
 
   @Column()
+  doador_anonimo: boolean;
+
+  @Column()
   local_entrega: string;
 
   @Column()
@@ -47,6 +50,9 @@ class Pedido {
 
   @Column()
   situacao: string;
+
+  @Column()
+  quantidade: string;
 
   @CreateDateColumn()
   created_at: Date;
