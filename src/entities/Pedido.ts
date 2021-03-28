@@ -10,6 +10,8 @@ import {
 import { v4 as uuidV4 } from "uuid";
 
 import { Aluno } from "./Aluno";
+import { Doador } from "./Doador";
+import { Material } from "./Material";
 
 @Entity("pedidos")
 class Pedido {
@@ -26,15 +28,15 @@ class Pedido {
   @Column()
   id_material: string;
 
-  @ManyToOne(() => Material, { eagle: true })
+  @ManyToOne(() => Material, { eager: true })
   @JoinColumn({ name: "id_material" })
   material: Material;
 
   @Column()
   id_doador: string;
 
-  @ManyToOne(() => Doador, { eagle: true })
-  @JoinColumn({ name: "id_doador " })
+  @ManyToOne(() => Doador, { eager: true })
+  @JoinColumn({ name: "id_doador" })
   doador: Doador;
 
   @Column()
