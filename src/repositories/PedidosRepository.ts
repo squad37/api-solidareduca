@@ -5,7 +5,6 @@ import { Pedido } from "../entities/Pedido";
 interface ICreatePedidoDTO {
   id_aluno: string;
   id_material: string;
-  situacao: string;
   quantidade: string;
 }
 

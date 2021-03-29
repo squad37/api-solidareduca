@@ -37,6 +37,7 @@ export class CreatePedidos1616824957084 implements MigrationInterface {
           {
             name: "situacao",
             type: "varchar",
+            default: "'pendente'",
           },
           {
             name: "created_at",
