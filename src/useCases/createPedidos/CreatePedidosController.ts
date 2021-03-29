@@ -7,12 +7,11 @@ class CreatePedidosController {
 
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const { id_aluno, id_material, situacao, quantidade } = request.body;
+      const { id_aluno, id_material, quantidade } = request.body;
 
       const pedido = {
         id_aluno,
         id_material,
-        situacao,
         quantidade,
       };
 

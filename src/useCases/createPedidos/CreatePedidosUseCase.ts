@@ -5,7 +5,6 @@ import { PedidosRepository } from "../../repositories/PedidosRepository";
 interface IRequest {
   id_aluno: string;
   id_material: string;
-  situacao: string;
   quantidade: string;
 }
 
