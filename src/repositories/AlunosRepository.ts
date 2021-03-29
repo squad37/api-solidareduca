@@ -26,6 +26,11 @@ class AlunosRepository {
     await this.repository.save(createAluno);
   }
 
+  async findById(id: string): Promise<Aluno> {
+    const aluno = await this.repository.findOne({ id });
+    return aluno;
+  }
+
   async findByCpf(cpf: string): Promise<Aluno> {
     const aluno = this.repository.findOne({ cpf });
     return aluno;

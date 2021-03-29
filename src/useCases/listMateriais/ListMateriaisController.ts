@@ -1,14 +1,13 @@
-
 import { Request, Response } from "express";
 
-import { ListMaterialUseCase } from "./ListMaterialUseCase";
+import { ListMateriaisUseCase } from "./ListMateriaisUseCase";
 
-class ListMaterialController {
-  constructor(private listMaterialUseCase: ListMaterialUseCase) {}
+class ListMateriaisController {
+  constructor(private listMateriaislUseCase: ListMateriaisUseCase) {}
 
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const materiais = await this.listMaterialUseCase.execute();
+      const materiais = await this.listMateriaislUseCase.execute();
 
       return response.status(200).json(materiais);
     } catch (error) {
@@ -17,4 +16,4 @@ class ListMaterialController {
   }
 }
 
-export { ListMaterialController };
+export { ListMateriaisController };
