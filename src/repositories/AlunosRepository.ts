@@ -41,6 +41,17 @@ class AlunosRepository {
     return aluno;
   }
 
+  async findByEscola(id_escola: string): Promise<Aluno[]> {
+    const alunos = await this.repository.find({
+      where: { id_escola },
+      order: {
+        nome: "ASC",
+      },
+    });
+
+    return alunos;
+  }
+
   async list(): Promise<Aluno[]> {
     const alunos = this.repository.find();
     return alunos;
