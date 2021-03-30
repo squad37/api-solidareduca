@@ -3,7 +3,7 @@ import { PedidosRepository } from "../../repositories/PedidosRepository";
 import { ListPedidosByAlunosController } from "./listPedidosByAlunosController";
 import { ListPedidosByAlunosUseCase } from "./listPedidosByAlunosUseCase";
 
-export default () => {
+export default (): ListPedidosByAlunosController => {
   const pedidosRepository = new PedidosRepository();
   const alunosRepository = new AlunosRepository();
   const listPedidosByAlunosUseCase = new ListPedidosByAlunosUseCase(
