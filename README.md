@@ -87,6 +87,93 @@ Retorna todos os alunos cadastrados em conjunto com a escola que está matricula
     }   
 ]
 ```
+### GET `/alunos/escolas`
+A rota recebe o `id_escola` pelo corpo da requisição e retorna todos os alunos de uma determinada escola.
+
+```jsx
+[
+  {
+    "id": "2684e934-f421-47ce-ad72-10b55efde2e3",
+    "nome": "Jaqueline",
+    "email": "jaqueline@solidareduca.com.br",
+    "cpf": "11122233340",
+    "cep": "11222333",
+    "uf": "SP",
+    "endereco": "Rua Teste",
+    "nome_responsavel": "Romário",
+    "created_at": "2021-03-29T01:16:56.327Z",
+    "updated_at": "2021-03-29T01:16:56.327Z",
+    "id_escola": "e3e53440-b488-462f-8a15-4baf0e129436",
+    "escola": {
+      "id": "e3e53440-b488-462f-8a15-4baf0e129436",
+      "id_inep": "35099120",
+      "nome": "MONTEIRO LOBATO EMEI",
+      "parceira": false,
+      "pontos": 2,
+      "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+      "uf": "SP",
+      "municipio": "São Vicente",
+      "localizacao": "Urbana",
+      "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+      "endereco": "RUA RIO LARGO, SN RUA. JARDIM NOSSO LAR. 11370-650 São Vicente - SP.",
+      "telefone": "(13) 34681572",
+      "categoria_administrativa": "Pública",
+      "dependencia_administrativa": "Municipal",
+      "categoria_escola_privada": "Não Informado",
+      "conveniada_poder_publico": "Não",
+      "regulamentacao_conselho_educacao": "Sim",
+      "porte": "Entre 51 e 200 matrículas de escolarização",
+      "modalidade": "Educação Infantil",
+      "outras_ofertas_educacionais": "",
+      "latitude": "-23.951815",
+      "longitude": "-46.3876286",
+      "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35099120",
+      "created_at": "2021-03-29T01:03:43.270Z",
+      "updated_at": "2021-03-29T01:16:56.238Z"
+    }
+  },
+  {
+    "id": "77e25a87-2158-4faf-b3e6-02868a59c9af",
+    "nome": "Julio",
+    "email": "julio@solidareduca.com.br",
+    "cpf": "11122233345",
+    "cep": "11222333",
+    "uf": "SP",
+    "endereco": "Rua Teste",
+    "nome_responsavel": "Romário",
+    "created_at": "2021-03-29T01:12:21.754Z",
+    "updated_at": "2021-03-29T01:12:21.754Z",
+    "id_escola": "e3e53440-b488-462f-8a15-4baf0e129436",
+    "escola": {
+      "id": "e3e53440-b488-462f-8a15-4baf0e129436",
+      "id_inep": "35099120",
+      "nome": "MONTEIRO LOBATO EMEI",
+      "parceira": false,
+      "pontos": 2,
+      "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+      "uf": "SP",
+      "municipio": "São Vicente",
+      "localizacao": "Urbana",
+      "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+      "endereco": "RUA RIO LARGO, SN RUA. JARDIM NOSSO LAR. 11370-650 São Vicente - SP.",
+      "telefone": "(13) 34681572",
+      "categoria_administrativa": "Pública",
+      "dependencia_administrativa": "Municipal",
+      "categoria_escola_privada": "Não Informado",
+      "conveniada_poder_publico": "Não",
+      "regulamentacao_conselho_educacao": "Sim",
+      "porte": "Entre 51 e 200 matrículas de escolarização",
+      "modalidade": "Educação Infantil",
+      "outras_ofertas_educacionais": "",
+      "latitude": "-23.951815",
+      "longitude": "-46.3876286",
+      "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35099120",
+      "created_at": "2021-03-29T01:03:43.270Z",
+      "updated_at": "2021-03-29T01:16:56.238Z"
+    }
+  }
+]
+```
 ### GET `/escolas`
 
 Retorna todas as escolas cadastradas.
@@ -287,6 +374,135 @@ A rota retorna todos os pedidos cadastrados.
     "doador": null
 }
 ```
+### GET `/pedidos/alunos`
+A rota recebe o `email` do aluno dentro do corpo da requisição e retorna todos os pedidos de um determinado aluno.
+
+```jsx
+[
+  {
+    "id": "241d4821-5463-436e-bbfb-e9b316e601ff",
+    "id_aluno": "77e25a87-2158-4faf-b3e6-02868a59c9af",
+    "id_material": "cc024715-b66c-4dbd-9ff2-054e40cc7064",
+    "id_doador": null,
+    "doador_anonimo": null,
+    "local_entrega": null,
+    "endereco_entrega": null,
+    "situacao": "pendente",
+    "quantidade": "1",
+    "created_at": "2021-03-29T01:13:46.041Z",
+    "updated_at": "2021-03-29T01:13:46.041Z",
+    "aluno": {
+      "id": "77e25a87-2158-4faf-b3e6-02868a59c9af",
+      "nome": "Julio",
+      "email": "julio@solidareduca.com.br",
+      "cpf": "11122233345",
+      "cep": "11222333",
+      "uf": "SP",
+      "endereco": "Rua Teste",
+      "nome_responsavel": "Romário",
+      "created_at": "2021-03-29T01:12:21.754Z",
+      "updated_at": "2021-03-29T01:12:21.754Z",
+      "id_escola": "e3e53440-b488-462f-8a15-4baf0e129436",
+      "escola": {
+        "id": "e3e53440-b488-462f-8a15-4baf0e129436",
+        "id_inep": "35099120",
+        "nome": "MONTEIRO LOBATO EMEI",
+        "parceira": false,
+        "pontos": 3,
+        "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+        "uf": "SP",
+        "municipio": "São Vicente",
+        "localizacao": "Urbana",
+        "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+        "endereco": "RUA RIO LARGO, SN RUA. JARDIM NOSSO LAR. 11370-650 São Vicente - SP.",
+        "telefone": "(13) 34681572",
+        "categoria_administrativa": "Pública",
+        "dependencia_administrativa": "Municipal",
+        "categoria_escola_privada": "Não Informado",
+        "conveniada_poder_publico": "Não",
+        "regulamentacao_conselho_educacao": "Sim",
+        "porte": "Entre 51 e 200 matrículas de escolarização",
+        "modalidade": "Educação Infantil",
+        "outras_ofertas_educacionais": "",
+        "latitude": "-23.951815",
+        "longitude": "-46.3876286",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35099120",
+        "created_at": "2021-03-29T01:03:43.270Z",
+        "updated_at": "2021-03-29T01:16:56.238Z"
+      }
+    },
+    "material": {
+      "id": "cc024715-b66c-4dbd-9ff2-054e40cc7064",
+      "nome": "Lápis de Cor",
+      "created_at": "2021-03-29T01:03:43.270Z",
+      "updated_at": "2021-03-29T01:03:43.270Z"
+    },
+    "doador": null
+  },
+  {
+    "id": "395c6992-bb46-4c20-aa72-58dc19644028",
+    "id_aluno": "77e25a87-2158-4faf-b3e6-02868a59c9af",
+    "id_material": "847178f1-901d-46f6-a19c-cc5128a0d3f7",
+    "id_doador": null,
+    "doador_anonimo": null,
+    "local_entrega": null,
+    "endereco_entrega": null,
+    "situacao": "pendente",
+    "quantidade": "1",
+    "created_at": "2021-03-29T01:13:25.539Z",
+    "updated_at": "2021-03-29T01:13:25.539Z",
+    "aluno": {
+      "id": "77e25a87-2158-4faf-b3e6-02868a59c9af",
+      "nome": "Julio",
+      "email": "julio@solidareduca.com.br",
+      "cpf": "11122233345",
+      "cep": "11222333",
+      "uf": "SP",
+      "endereco": "Rua Teste",
+      "nome_responsavel": "Romário",
+      "created_at": "2021-03-29T01:12:21.754Z",
+      "updated_at": "2021-03-29T01:12:21.754Z",
+      "id_escola": "e3e53440-b488-462f-8a15-4baf0e129436",
+      "escola": {
+        "id": "e3e53440-b488-462f-8a15-4baf0e129436",
+        "id_inep": "35099120",
+        "nome": "MONTEIRO LOBATO EMEI",
+        "parceira": false,
+        "pontos": 3,
+        "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+        "uf": "SP",
+        "municipio": "São Vicente",
+        "localizacao": "Urbana",
+        "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+        "endereco": "RUA RIO LARGO, SN RUA. JARDIM NOSSO LAR. 11370-650 São Vicente - SP.",
+        "telefone": "(13) 34681572",
+        "categoria_administrativa": "Pública",
+        "dependencia_administrativa": "Municipal",
+        "categoria_escola_privada": "Não Informado",
+        "conveniada_poder_publico": "Não",
+        "regulamentacao_conselho_educacao": "Sim",
+        "porte": "Entre 51 e 200 matrículas de escolarização",
+        "modalidade": "Educação Infantil",
+        "outras_ofertas_educacionais": "",
+        "latitude": "-23.951815",
+        "longitude": "-46.3876286",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35099120",
+        "created_at": "2021-03-29T01:03:43.270Z",
+        "updated_at": "2021-03-29T01:16:56.238Z"
+      }
+    },
+    "material": {
+      "id": "847178f1-901d-46f6-a19c-cc5128a0d3f7",
+      "nome": "Mochila",
+      "created_at": "2021-03-29T01:03:43.270Z",
+      "updated_at": "2021-03-29T01:03:43.270Z"
+    },
+    "doador": null
+  }
+]
+```
+
+
 ## 💻 Tecnologias
 
 Essa aplicacão foi desenvolvida com as seguintes tecnologias:
