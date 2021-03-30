@@ -19,8 +19,11 @@ class Doador {
   email: string;
 
   @Column()
-  pontos: number;
+  cpf: string;
 
+  @Column()
+  pontos: number;
+  
   @Column()
   cep: string;
 
