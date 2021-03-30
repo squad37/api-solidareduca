@@ -21,6 +21,17 @@ class PedidosRepository {
     this.repository.save(createPedido);
   }
 
+  // Retorna todos os pedidos de um aluno
+  async findByAluno(id_aluno: string): Promise<Pedido[]> {
+    const pedidos = await this.repository.find({
+      where: { id_aluno },
+      order: {
+        updated_at: "DESC",
+      },
+    });
+    return pedidos;
+  }
+
   async list(): Promise<Pedido[]> {
     const pedidos = this.repository.find();
     return pedidos;
