@@ -9,8 +9,6 @@ interface ICreateDoadorDTO {
   cep: string;
   uf: string;
   endereco: string;
-  pontos: number;
-  id_doador : string;
   
 }
 
@@ -50,8 +48,8 @@ class DoadoresRepository {
   }
 
   async list(): Promise<Doador[]> {
-    const doador = this.repository.find();
-    return doador;
+    const doadores = this.repository.find();
+    return doadores;
   }
 }
 

@@ -13,24 +13,19 @@ class CreateDoadoresController {
         cpf,
         cep,
         uf,
-        endereco,
-        nome_responsavel,
-        
+        endereco, 
       } = request.body;
 
-      let { id_doador } = request.body;
-      id_doador = id_doador.toString();
-
-      await this.createDoadoresUseCase.execute({
+      const doador = {
         nome,
         email,
         cpf,
         cep,
         uf,
-        endereco,
-        nome_responsavel,
-        id_doador,
-      });
+        endereco, 
+      };
+
+      await this.createDoadoresUseCase.execute(doador);
 
       return response.status(201).send();
     } catch (error) {
