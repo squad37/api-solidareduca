@@ -1,5 +1,3 @@
-import { json } from "express";
-
 import { Aluno } from "../../entities/Aluno";
 import { AlunosRepository } from "../../repositories/AlunosRepository";
 import { EscolasRepository } from "../../repositories/EscolasRepository";
