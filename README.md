@@ -564,6 +564,45 @@ A rota recebe o `email` do aluno dentro do corpo da requisição e retorna todos
   }
 ]
 ```
+### POST `/doadores`
+
+A rota recebe `nome email cpf cep uf endereco`  do corpo da requisição.
+
+É criado um objeto com as seguintes informações:  
+
+```jsx
+{ 
+	"nome": "João",
+	"email": "joão@e-mail.com.br",
+	"cpf": "11235896522",
+	"cep": "18400000",
+	"uf": "SP",
+	"endereco": "Alameda",
+    
+}
+```
+Este objeto é inserido no banco de dados na tabela doadores.
+
+### GET `/doadores`
+
+Retorna todos os doadores cadastrados.
+
+```jsx
+[
+    {
+        "id": "ebcdaa24-ac92-4e5c-b7d9-d0a9b47dad5a",
+        "nome": "João",
+        "email": "joão@email.com.br",
+        "cpf": ""11235896522"",
+        "cep": "18400000",
+        "uf": "SP",
+        "endereco": "Alameda"
+                      
+    }   
+]
+```
+
+
 
 
 ## 💻 Tecnologias
