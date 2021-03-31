@@ -132,7 +132,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012087",
           nome: "ENIO VILAS BOAS PROFESSOR",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -161,7 +161,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012129",
           nome: "MARIA THEREZA DA CUNHA PEDROSO PROFESSORA",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -190,7 +190,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012130",
           nome: "JOSE NIGRO PROFESSOR",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -219,7 +219,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012142",
           nome: "ZULMIRA DE ALMEIDA LAMBERT PROFESSORA",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -248,7 +248,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012212",
           nome: "MARTIM AFONSO",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -277,7 +277,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012245",
           nome: "YOLANDA CONTE PROFESSORA",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -306,7 +306,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012300",
           nome: "MARGARIDA PINHO RODRIGUES",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -335,7 +335,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012324",
           nome: "ARMANDO VICTORIO BEI",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -364,7 +364,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35012348",
           nome: "LEOPOLDO JOSE DE SANT ANNA PROFESSOR",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
@@ -394,7 +394,7 @@ export class CreateEscolas1616801926830 implements MigrationInterface {
           id: uuidV4(),
           id_inep: "35278750",
           nome: "NOSSA SENHORA DA ESPERANCA EMEI",
-          parceira: false,
+          parceira: true,
           pontos: 0,
           restricao_atendimento:
             "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
