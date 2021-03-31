@@ -25,7 +25,17 @@ class EscolasRepository {
   async list(): Promise<Escola[]> {
     const escolas = await this.repository.find({
       order: {
+        nome: "ASC",
+      },
+    });
+    return escolas;
+  }
+
+  async listByRanking(): Promise<Escola[]> {
+    const escolas = await this.repository.find({
+      order: {
         pontos: "DESC",
+        nome: "ASC",
       },
     });
     return escolas;

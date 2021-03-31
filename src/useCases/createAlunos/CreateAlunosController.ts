@@ -15,10 +15,8 @@ class CreateAlunosController {
         uf,
         endereco,
         nome_responsavel,
+        id_escola,
       } = request.body;
-
-      let { id_escola } = request.headers;
-      id_escola = id_escola.toString();
 
       await this.createAlunosUseCase.execute({
         nome,

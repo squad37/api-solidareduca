@@ -9,7 +9,6 @@ interface ICreateDoadorDTO {
   cep: string;
   uf: string;
   endereco: string;
-  
 }
 
 @EntityRepository(Doador)
@@ -21,12 +20,12 @@ class DoadoresRepository {
   }
 
   async create(doador: ICreateDoadorDTO): Promise<void> {
-    const createDoador = this.repository.create(doador);
+    const createDoador = await this.repository.create(doador);
     await this.repository.save(createDoador);
   }
 
   async patchPontos(id: string): Promise<void> {
-    const doador = await this.findById(id);
+    const doador = await this.repository.findOne({ id });
     doador.pontos += 1;
 
     await this.repository.save(doador);
