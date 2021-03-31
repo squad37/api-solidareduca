@@ -26,7 +26,7 @@ class DoadoresRepository {
   }
 
   async patchPontos(id: string): Promise<void> {
-    const doador = await this.findById(id);
+    const doador = await this.repository.findOne( {id} );
     doador.pontos += 1;
 
     await this.repository.save(doador);
