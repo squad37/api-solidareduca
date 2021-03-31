@@ -87,8 +87,10 @@ Retorna todos os alunos cadastrados em conjunto com a escola que está matricula
     }   
 ]
 ```
-### GET `/alunos/escolas`
-A rota recebe o `id_escola` pelo corpo da requisição e retorna todos os alunos de uma determinada escola.
+### GET `/alunos/:id_escola`
+A rota recebe o `id_escola` pelo `request.params` e retorna todos os alunos de uma determinada escola.
+
+Exemplo de como utilizar: `http://localhost:3333/alunos/155a58ff-32f5-4fa7-b6e0-5c11b1e801c1`
 
 ```jsx
 [
@@ -437,8 +439,10 @@ A rota retorna todos os pedidos cadastrados.
     "doador": null
 }
 ```
-### GET `/pedidos/alunos`
-A rota recebe o `email` do aluno dentro do corpo da requisição e retorna todos os pedidos de um determinado aluno.
+### GET `/pedidos/:id_aluno`
+A rota recebe o `id_aluno` pelo `request.params` e retorna todos os pedidos de um determinado aluno, por ordem de criação.
+
+Exemplo de como utilizar: `http://localhost:3333/pedidos/60b76f8e-91bd-4cde-b8ef-2b909089c952`
 
 ```jsx
 [

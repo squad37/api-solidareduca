@@ -54,6 +54,12 @@ class Pedido {
   @Column()
   quantidade: string;
 
+  @Column()
+  previsao_entrega: string;
+
+  @Column()
+  mensagem_agradecimento: string;
+
   @CreateDateColumn()
   created_at: Date;
 

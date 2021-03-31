@@ -14,7 +14,7 @@ alunosRoutes.get("/", (request, response) => {
   return listAlunosController().handle(request, response);
 });
 
-alunosRoutes.get("/escolas", (request, response) => {
+alunosRoutes.get("/:id_escola", (request, response) => {
   return listAlunosByEscolasController().handle(request, response);
 });
 
