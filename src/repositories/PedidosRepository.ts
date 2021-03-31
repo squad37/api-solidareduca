@@ -26,7 +26,7 @@ class PedidosRepository {
     const pedidos = await this.repository.find({
       where: { id_aluno },
       order: {
-        updated_at: "DESC",
+        created_at: "ASC",
       },
     });
     return pedidos;

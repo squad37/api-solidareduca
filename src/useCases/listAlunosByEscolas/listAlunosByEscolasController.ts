@@ -7,7 +7,7 @@ class ListAlunosByEscolasController {
 
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const { id_escola } = request.body;
+      const { id_escola } = request.params;
 
       const alunosByEscola = await this.listAlunosByEscolasUseCase.execute(
         id_escola

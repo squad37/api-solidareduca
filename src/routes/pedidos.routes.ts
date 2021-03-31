@@ -14,7 +14,7 @@ pedidosRoutes.get("/", (request, response) => {
   return listPedidosController().handle(request, response);
 });
 
-pedidosRoutes.get("/alunos", (request, response) => {
+pedidosRoutes.get("/:id_aluno", (request, response) => {
   return listPedidosByAlunosController().handle(request, response);
 });
 
