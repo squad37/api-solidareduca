@@ -7,11 +7,9 @@ interface IRequest {
   cep: string;
   uf: string;
   endereco: string;
-  
 }
 class CreateDoadoresUseCase {
-  constructor(
-    private doadoresRepository: DoadoresRepository) {}
+  constructor(private doadoresRepository: DoadoresRepository) {}
 
   async execute({
     nome,
@@ -20,7 +18,6 @@ class CreateDoadoresUseCase {
     cep,
     uf,
     endereco,
-    
   }: IRequest): Promise<void> {
     const cpfExists = await this.doadoresRepository.findByCpf(cpf);
 
@@ -41,7 +38,6 @@ class CreateDoadoresUseCase {
       cep,
       uf,
       endereco,
-    
     };
     await this.doadoresRepository.create(doadores);
   }

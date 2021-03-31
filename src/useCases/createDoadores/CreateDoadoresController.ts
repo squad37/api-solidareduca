@@ -7,14 +7,7 @@ class CreateDoadoresController {
 
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const {
-        nome,
-        email,
-        cpf,
-        cep,
-        uf,
-        endereco, 
-      } = request.body;
+      const { nome, email, cpf, cep, uf, endereco } = request.body;
 
       const doador = {
         nome,
@@ -22,14 +15,14 @@ class CreateDoadoresController {
         cpf,
         cep,
         uf,
-        endereco, 
+        endereco,
       };
 
       await this.createDoadoresUseCase.execute(doador);
 
       return response.status(201).send();
     } catch (error) {
-      return response.status(400).json({ error: "error.message" });
+      return response.status(400).json({ error: error.message });
     }
   }
 }

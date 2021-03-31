@@ -174,9 +174,72 @@ A rota recebe o `id_escola` pelo corpo da requisição e retorna todos os alunos
   }
 ]
 ```
+
 ### GET `/escolas`
 
-Retorna todas as escolas cadastradas.
+Retorna todas as escolas por ordem alfabética.
+
+```jsx
+[
+  {
+    "id": "d45f2eda-4b5b-42fe-a73e-9ccfc00be5ae",
+    "id_inep": "35012324",
+    "nome": "ARMANDO VICTORIO BEI",
+    "parceira": false,
+    "pontos": 0,
+    "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+    "uf": "SP",
+    "municipio": "São Vicente",
+    "localizacao": "Urbana",
+    "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+    "endereco": "CARIJOS, 1020 RUA. PARQUE SAO VICENTE. 11360-100 São Vicente - SP.",
+    "telefone": "(13) 34649493",
+    "categoria_administrativa": "Pública",
+    "dependencia_administrativa": "Estadual",
+    "categoria_escola_privada": "Não Informado",
+    "conveniada_poder_publico": "Não",
+    "regulamentacao_conselho_educacao": "Sim",
+    "porte": "Mais de 1000 matrículas de escolarização",
+    "modalidade": "Ensino Fundamental, Ensino Médio",
+    "outras_ofertas_educacionais": "",
+    "latitude": "-23.9497288",
+    "longitude": "-46.3978776",
+    "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012324",
+    "created_at": "2021-03-30T23:31:12.825Z",
+    "updated_at": "2021-03-30T23:31:12.825Z"
+  },
+  {
+    "id": "155a58ff-32f5-4fa7-b6e0-5c11b1e801c1",
+    "id_inep": "35012087",
+    "nome": "ENIO VILAS BOAS PROFESSOR",
+    "parceira": false,
+    "pontos": 1,
+    "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+    "uf": "SP",
+    "municipio": "São Vicente",
+    "localizacao": "Urbana",
+    "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+    "endereco": "JOSE JOAQUIM DE AZEVEDO, 1166 RUA. CIDADE NAUTICA. 11355-040 São Vicente - SP.",
+    "telefone": "(13) 34641983",
+    "categoria_administrativa": "Pública",
+    "dependencia_administrativa": "Estadual",
+    "categoria_escola_privada": "Não Informado",
+    "conveniada_poder_publico": "Não",
+    "regulamentacao_conselho_educacao": "Sim",
+    "porte": "Entre 201 e 500 matrículas de escolarização",
+    "modalidade": "Ensino Fundamental",
+    "outras_ofertas_educacionais": "Atendimento Educacional Especializado",
+    "latitude": "-23.94017",
+    "longitude": "-46.4081876",
+    "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012087",
+    "created_at": "2021-03-30T23:31:12.825Z",
+    "updated_at": "2021-03-31T02:07:59.495Z"
+  }
+]
+```
+### GET `/escolas/ranking`
+
+Retorna o ranking de todas as escolas cadastradas. Caso tenha escolas com pontuações iguais, será exibido por ordem alfabética.
 
 ```jsx
 [

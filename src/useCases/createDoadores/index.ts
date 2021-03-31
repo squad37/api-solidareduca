@@ -7,7 +7,7 @@ export default (): CreateDoadoresController => {
   const doadoresRepository = new DoadoresRepository();
   const createDoadoresUseCase = new CreateDoadoresUseCase(doadoresRepository);
   const createDoadoresController = new CreateDoadoresController(
-        createDoadoresUseCase
+    createDoadoresUseCase
   );
 
   return createDoadoresController;
