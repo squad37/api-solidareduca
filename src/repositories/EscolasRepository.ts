@@ -40,6 +40,12 @@ class EscolasRepository {
     });
     return escolas;
   }
+
+  async listByNome( nome : string): Promise<Escola[]> {
+    const escola = await this.repository.find({ nome });
+    return escola;
+  }
+
 }
 
 export { EscolasRepository };
