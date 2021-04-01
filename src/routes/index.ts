@@ -13,5 +13,6 @@ router.use("/alunos", alunosRoutes);
 router.use("/materiais", materiaisRoutes);
 router.use("/pedidos", pedidosRoutes);
 router.use("/doadores",doadoresRoutes);
+router.use("/buscar",escolasRoutes);
 
 export { router };

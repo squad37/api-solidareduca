@@ -41,8 +41,8 @@ class EscolasRepository {
     return escolas;
   }
 
-  async listByNome( nome : string): Promise<Escola[]> {
-    const escola = await this.repository.find({ nome });
+  async listByNome( nome : string): Promise<Escola> {
+    const escola = await this.repository.findOne({ nome });
     return escola;
   }
 

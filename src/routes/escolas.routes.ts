@@ -4,6 +4,7 @@ import listEscolasController from "../useCases/listEscolas";
 import listEscolasByRankingController from "../useCases/listEscolasByRanking";
 import listEscolasByNomeController from "../useCases/listEscolasByNome";
 
+
 const escolasRoutes = Router();
 
 escolasRoutes.get("/", (request, response) => {
