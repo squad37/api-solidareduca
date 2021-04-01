@@ -6,6 +6,11 @@ class ListDoadoresUseCase {
 
   async execute(): Promise<Doador[]> {
     const doadores = await this.doadoresRepository.list();
+
+    if (doadores.length === 0) {
+      throw new Error("Nenhum doador cadastrado!");
+    }
+
     return doadores;
   }
 }

@@ -17,6 +17,10 @@ class ListAlunosByEscolasUseCase {
 
     const alunosByEscola = await this.alunosRepository.findByEscola(id_escola);
 
+    if (alunosByEscola.length === 0) {
+      throw new Error("Nenhum aluno matriculado nessa escola!");
+    }
+
     return alunosByEscola;
   }
 }

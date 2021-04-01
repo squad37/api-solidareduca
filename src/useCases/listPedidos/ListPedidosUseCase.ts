@@ -6,6 +6,11 @@ class ListPedidosUseCase {
 
   async execute(): Promise<Pedido[]> {
     const pedidos = await this.pedidosRepository.list();
+
+    if (pedidos.length === 0) {
+      throw new Error("Nenhum pedido cadastrado!");
+    }
+
     return pedidos;
   }
 }
