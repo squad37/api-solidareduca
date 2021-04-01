@@ -20,7 +20,7 @@ Desenvolvemos também um **ranking** para as **escolas**, com o objetivo delas d
 
 ### POST `/alunos`
 
-A rota recebe `nome email cpf cep uf endereco nome_responsavel` dentro do corpo da requisição e o `id_escola` dentro do header.
+A rota recebe `nome email cpf cep uf endereco nome_responsavel id_escola` dentro do corpo da requisição.
 
 É criado um objeto com as seguintes informações:  
 
@@ -32,8 +32,8 @@ A rota recebe `nome email cpf cep uf endereco nome_responsavel` dentro do corpo 
 	"cep": "11222333",
 	"uf": "SP",
 	"endereco": "Rua Teste",
-    "nome_responsavel": "Mária"
-    "id_escola": "0dad5291-1289-45e3-ad8e-1d29d9eae9e1",
+  "nome_responsavel": "Mária"
+  "id_escola": "0dad5291-1289-45e3-ad8e-1d29d9eae9e1",
 }
 ```
 Este objeto é inserido no banco de dados na tabela alunos.
@@ -90,7 +90,7 @@ Retorna todos os alunos cadastrados em conjunto com a escola que está matricula
 ### GET `/alunos/:id_escola`
 A rota recebe o `id_escola` pelo `request.params` e retorna todos os alunos de uma determinada escola.
 
-Exemplo de como utilizar: `http://localhost:3333/alunos/155a58ff-32f5-4fa7-b6e0-5c11b1e801c1`
+Exemplo de como utilizar: `http://localhost:3333/alunos/127479e0-20d5-45a4-9e93-846ac56b9375`
 
 ```jsx
 [
@@ -107,7 +107,7 @@ Exemplo de como utilizar: `http://localhost:3333/alunos/155a58ff-32f5-4fa7-b6e0-
     "updated_at": "2021-03-29T01:16:56.327Z",
     "id_escola": "e3e53440-b488-462f-8a15-4baf0e129436",
     "escola": {
-      "id": "e3e53440-b488-462f-8a15-4baf0e129436",
+      "id": "127479e0-20d5-45a4-9e93-846ac56b9375",
       "id_inep": "35099120",
       "nome": "MONTEIRO LOBATO EMEI",
       "parceira": false,
@@ -147,7 +147,7 @@ Exemplo de como utilizar: `http://localhost:3333/alunos/155a58ff-32f5-4fa7-b6e0-
     "updated_at": "2021-03-29T01:12:21.754Z",
     "id_escola": "e3e53440-b488-462f-8a15-4baf0e129436",
     "escola": {
-      "id": "e3e53440-b488-462f-8a15-4baf0e129436",
+      "id": "127479e0-20d5-45a4-9e93-846ac56b9375",
       "id_inep": "35099120",
       "nome": "MONTEIRO LOBATO EMEI",
       "parceira": false,
@@ -440,133 +440,267 @@ A rota retorna todos os pedidos cadastrados.
 }
 ```
 ### GET `/pedidos/:id_aluno`
-A rota recebe o `id_aluno` pelo `request.params` e retorna todos os pedidos de um determinado aluno, por ordem de criação.
+A rota recebe o `id_aluno` pelo `request.params` e retorna todos os pedidos de um determinado aluno, independente da situação do pedido(aguardando doador, doador encontrado, pedido recebido), por ordem de criação.
 
 Exemplo de como utilizar: `http://localhost:3333/pedidos/60b76f8e-91bd-4cde-b8ef-2b909089c952`
 
 ```jsx
 [
   {
-    "id": "b538106f-7c84-4382-9521-b9f4644d580a",
-    "id_aluno": "64f33d15-bed5-43b9-beb0-f30b8578f7b3",
-    "id_material": "2422a6cd-5c52-4321-bcf0-93c04020f4e6",
+    "id": "c40a0334-0ee8-4982-a620-4cd1cc3d28f0",
+    "id_aluno": "0f617671-e275-4602-97a3-a2108036e897",
+    "id_material": "73f0b6f4-9135-4ee2-9bab-c13f844cb36c",
     "id_doador": null,
     "doador_anonimo": null,
     "local_entrega": null,
     "endereco_entrega": null,
     "situacao": "aguardando-doador",
-    "quantidade": "5",
+    "quantidade": "2",
     "previsao_entrega": null,
     "mensagem_agradecimento": null,
-    "created_at": "2021-03-31T22:28:52.283Z",
-    "updated_at": "2021-03-31T22:28:52.283Z",
+    "created_at": "2021-04-01T01:15:43.585Z",
+    "updated_at": "2021-04-01T01:15:43.585Z",
     "aluno": {
-      "id": "64f33d15-bed5-43b9-beb0-f30b8578f7b3",
-      "nome": "Joao",
-      "email": "joao@solidareduca.com.br",
-      "cpf": "11122233343111111",
+      "id": "0f617671-e275-4602-97a3-a2108036e897",
+      "nome": "Oseias1",
+      "email": "oseias1@solidareduca.com.br",
+      "cpf": "111222333431111111",
       "cep": "11222331",
       "uf": "SP",
       "endereco": "Rua Teste",
       "nome_responsavel": "Romário",
-      "created_at": "2021-03-31T22:27:54.912Z",
-      "updated_at": "2021-03-31T22:27:54.912Z",
-      "id_escola": "58e8c45b-2237-473c-bcee-d9e0499dbdea",
+      "created_at": "2021-04-01T01:15:14.348Z",
+      "updated_at": "2021-04-01T01:15:14.348Z",
+      "id_escola": "127479e0-20d5-45a4-9e93-846ac56b9375",
       "escola": {
-        "id": "58e8c45b-2237-473c-bcee-d9e0499dbdea",
-        "id_inep": "35012324",
-        "nome": "ARMANDO VICTORIO BEI",
-        "parceira": false,
-        "pontos": 1,
+        "id": "127479e0-20d5-45a4-9e93-846ac56b9375",
+        "id_inep": "35012212",
+        "nome": "MARTIM AFONSO",
+        "parceira": true,
+        "pontos": 2,
         "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
         "uf": "SP",
         "municipio": "São Vicente",
         "localizacao": "Urbana",
         "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
-        "endereco": "CARIJOS, 1020 RUA. PARQUE SAO VICENTE. 11360-100 São Vicente - SP.",
-        "telefone": "(13) 34649493",
+        "endereco": "JOSE BONIFACIO, 102 RUA. CENTRO. 11310-080 São Vicente - SP.",
+        "telefone": "(13) 34681625",
         "categoria_administrativa": "Pública",
         "dependencia_administrativa": "Estadual",
         "categoria_escola_privada": "Não Informado",
         "conveniada_poder_publico": "Não",
         "regulamentacao_conselho_educacao": "Sim",
-        "porte": "Mais de 1000 matrículas de escolarização",
-        "modalidade": "Ensino Fundamental, Ensino Médio",
+        "porte": "Entre 501 e 1000 matrículas de escolarização",
+        "modalidade": "Ensino Médio",
         "outras_ofertas_educacionais": "",
-        "latitude": "-23.9497288",
-        "longitude": "-46.3978776",
-        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012324",
-        "created_at": "2021-03-31T22:27:07.957Z",
-        "updated_at": "2021-03-31T22:27:54.904Z"
+        "latitude": "-23.9692813",
+        "longitude": "-46.383432",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012212",
+        "created_at": "2021-04-01T01:05:01.085Z",
+        "updated_at": "2021-04-01T01:15:14.344Z"
       }
     },
     "material": {
-      "id": "2422a6cd-5c52-4321-bcf0-93c04020f4e6",
-      "nome": "Caderno Única Matéria",
-      "created_at": "2021-03-31T22:27:07.957Z",
-      "updated_at": "2021-03-31T22:27:07.957Z"
+      "id": "73f0b6f4-9135-4ee2-9bab-c13f844cb36c",
+      "nome": "Caderno 20 Matérias",
+      "created_at": "2021-04-01T01:05:01.085Z",
+      "updated_at": "2021-04-01T01:05:01.085Z"
     },
     "doador": null
   },
   {
-    "id": "f048cd31-1e35-49d5-8628-bc28a2e47168",
-    "id_aluno": "64f33d15-bed5-43b9-beb0-f30b8578f7b3",
-    "id_material": "2e030aec-443f-47ff-8790-17143d0d3186",
+    "id": "e9c5c3df-1b99-4be8-8c74-6d752a8f671b",
+    "id_aluno": "0f617671-e275-4602-97a3-a2108036e897",
+    "id_material": "26358a68-dddb-4e7d-8c06-607e337f61ee",
     "id_doador": null,
     "doador_anonimo": null,
     "local_entrega": null,
     "endereco_entrega": null,
     "situacao": "aguardando-doador",
-    "quantidade": "5",
+    "quantidade": "1",
     "previsao_entrega": null,
     "mensagem_agradecimento": null,
-    "created_at": "2021-03-31T22:46:47.380Z",
-    "updated_at": "2021-03-31T22:46:47.380Z",
+    "created_at": "2021-04-01T01:16:10.284Z",
+    "updated_at": "2021-04-01T01:16:10.284Z",
     "aluno": {
-      "id": "64f33d15-bed5-43b9-beb0-f30b8578f7b3",
-      "nome": "Joao",
-      "email": "Joao@solidareduca.com.br",
-      "cpf": "11122233343111111",
+      "id": "0f617671-e275-4602-97a3-a2108036e897",
+      "nome": "Oseias1",
+      "email": "oseias1@solidareduca.com.br",
+      "cpf": "111222333431111111",
       "cep": "11222331",
       "uf": "SP",
       "endereco": "Rua Teste",
       "nome_responsavel": "Romário",
-      "created_at": "2021-03-31T22:27:54.912Z",
-      "updated_at": "2021-03-31T22:27:54.912Z",
-      "id_escola": "58e8c45b-2237-473c-bcee-d9e0499dbdea",
+      "created_at": "2021-04-01T01:15:14.348Z",
+      "updated_at": "2021-04-01T01:15:14.348Z",
+      "id_escola": "127479e0-20d5-45a4-9e93-846ac56b9375",
       "escola": {
-        "id": "58e8c45b-2237-473c-bcee-d9e0499dbdea",
-        "id_inep": "35012324",
-        "nome": "ARMANDO VICTORIO BEI",
-        "parceira": false,
-        "pontos": 1,
+        "id": "127479e0-20d5-45a4-9e93-846ac56b9375",
+        "id_inep": "35012212",
+        "nome": "MARTIM AFONSO",
+        "parceira": true,
+        "pontos": 2,
         "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
         "uf": "SP",
         "municipio": "São Vicente",
         "localizacao": "Urbana",
         "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
-        "endereco": "CARIJOS, 1020 RUA. PARQUE SAO VICENTE. 11360-100 São Vicente - SP.",
-        "telefone": "(13) 34649493",
+        "endereco": "JOSE BONIFACIO, 102 RUA. CENTRO. 11310-080 São Vicente - SP.",
+        "telefone": "(13) 34681625",
         "categoria_administrativa": "Pública",
         "dependencia_administrativa": "Estadual",
         "categoria_escola_privada": "Não Informado",
         "conveniada_poder_publico": "Não",
         "regulamentacao_conselho_educacao": "Sim",
-        "porte": "Mais de 1000 matrículas de escolarização",
-        "modalidade": "Ensino Fundamental, Ensino Médio",
+        "porte": "Entre 501 e 1000 matrículas de escolarização",
+        "modalidade": "Ensino Médio",
         "outras_ofertas_educacionais": "",
-        "latitude": "-23.9497288",
-        "longitude": "-46.3978776",
-        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012324",
-        "created_at": "2021-03-31T22:27:07.957Z",
-        "updated_at": "2021-03-31T22:27:54.904Z"
+        "latitude": "-23.9692813",
+        "longitude": "-46.383432",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012212",
+        "created_at": "2021-04-01T01:05:01.085Z",
+        "updated_at": "2021-04-01T01:15:14.344Z"
       }
     },
     "material": {
-      "id": "2e030aec-443f-47ff-8790-17143d0d3186",
-      "nome": "Mochila",
-      "created_at": "2021-03-31T22:27:07.957Z",
-      "updated_at": "2021-03-31T22:27:07.957Z"
+      "id": "26358a68-dddb-4e7d-8c06-607e337f61ee",
+      "nome": "Lápis",
+      "created_at": "2021-04-01T01:05:01.085Z",
+      "updated_at": "2021-04-01T01:05:01.085Z"
+    },
+    "doador": null
+  }
+]
+```
+### GET `/pedidos/:id_aluno/aguardando-doador`
+
+A rota recebe o `id_aluno` pelo `request.params` e retorna os pedidos de um determinado aluno que estão na situação: aguardando-doador.
+
+Exemplo de utilização: `http://localhost:3333/pedidos/0f617671-e275-4602-97a3-a2108036e897/aguardando-doador`
+
+```jsx
+[
+  {
+    "id": "c40a0334-0ee8-4982-a620-4cd1cc3d28f0",
+    "id_aluno": "0f617671-e275-4602-97a3-a2108036e897",
+    "id_material": "73f0b6f4-9135-4ee2-9bab-c13f844cb36c",
+    "id_doador": null,
+    "doador_anonimo": null,
+    "local_entrega": null,
+    "endereco_entrega": null,
+    "situacao": "aguardando-doador",
+    "quantidade": "2",
+    "previsao_entrega": null,
+    "mensagem_agradecimento": null,
+    "created_at": "2021-04-01T01:15:43.585Z",
+    "updated_at": "2021-04-01T01:15:43.585Z",
+    "aluno": {
+      "id": "0f617671-e275-4602-97a3-a2108036e897",
+      "nome": "Oseias1",
+      "email": "oseias1@solidareduca.com.br",
+      "cpf": "111222333431111111",
+      "cep": "11222331",
+      "uf": "SP",
+      "endereco": "Rua Teste",
+      "nome_responsavel": "Romário",
+      "created_at": "2021-04-01T01:15:14.348Z",
+      "updated_at": "2021-04-01T01:15:14.348Z",
+      "id_escola": "127479e0-20d5-45a4-9e93-846ac56b9375",
+      "escola": {
+        "id": "127479e0-20d5-45a4-9e93-846ac56b9375",
+        "id_inep": "35012212",
+        "nome": "MARTIM AFONSO",
+        "parceira": true,
+        "pontos": 2,
+        "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+        "uf": "SP",
+        "municipio": "São Vicente",
+        "localizacao": "Urbana",
+        "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+        "endereco": "JOSE BONIFACIO, 102 RUA. CENTRO. 11310-080 São Vicente - SP.",
+        "telefone": "(13) 34681625",
+        "categoria_administrativa": "Pública",
+        "dependencia_administrativa": "Estadual",
+        "categoria_escola_privada": "Não Informado",
+        "conveniada_poder_publico": "Não",
+        "regulamentacao_conselho_educacao": "Sim",
+        "porte": "Entre 501 e 1000 matrículas de escolarização",
+        "modalidade": "Ensino Médio",
+        "outras_ofertas_educacionais": "",
+        "latitude": "-23.9692813",
+        "longitude": "-46.383432",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012212",
+        "created_at": "2021-04-01T01:05:01.085Z",
+        "updated_at": "2021-04-01T01:15:14.344Z"
+      }
+    },
+    "material": {
+      "id": "73f0b6f4-9135-4ee2-9bab-c13f844cb36c",
+      "nome": "Caderno 20 Matérias",
+      "created_at": "2021-04-01T01:05:01.085Z",
+      "updated_at": "2021-04-01T01:05:01.085Z"
+    },
+    "doador": null
+  },
+  {
+    "id": "e9c5c3df-1b99-4be8-8c74-6d752a8f671b",
+    "id_aluno": "0f617671-e275-4602-97a3-a2108036e897",
+    "id_material": "26358a68-dddb-4e7d-8c06-607e337f61ee",
+    "id_doador": null,
+    "doador_anonimo": null,
+    "local_entrega": null,
+    "endereco_entrega": null,
+    "situacao": "aguardando-doador",
+    "quantidade": "1",
+    "previsao_entrega": null,
+    "mensagem_agradecimento": null,
+    "created_at": "2021-04-01T01:16:10.284Z",
+    "updated_at": "2021-04-01T01:16:10.284Z",
+    "aluno": {
+      "id": "0f617671-e275-4602-97a3-a2108036e897",
+      "nome": "Oseias1",
+      "email": "oseias1@solidareduca.com.br",
+      "cpf": "111222333431111111",
+      "cep": "11222331",
+      "uf": "SP",
+      "endereco": "Rua Teste",
+      "nome_responsavel": "Romário",
+      "created_at": "2021-04-01T01:15:14.348Z",
+      "updated_at": "2021-04-01T01:15:14.348Z",
+      "id_escola": "127479e0-20d5-45a4-9e93-846ac56b9375",
+      "escola": {
+        "id": "127479e0-20d5-45a4-9e93-846ac56b9375",
+        "id_inep": "35012212",
+        "nome": "MARTIM AFONSO",
+        "parceira": true,
+        "pontos": 2,
+        "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+        "uf": "SP",
+        "municipio": "São Vicente",
+        "localizacao": "Urbana",
+        "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+        "endereco": "JOSE BONIFACIO, 102 RUA. CENTRO. 11310-080 São Vicente - SP.",
+        "telefone": "(13) 34681625",
+        "categoria_administrativa": "Pública",
+        "dependencia_administrativa": "Estadual",
+        "categoria_escola_privada": "Não Informado",
+        "conveniada_poder_publico": "Não",
+        "regulamentacao_conselho_educacao": "Sim",
+        "porte": "Entre 501 e 1000 matrículas de escolarização",
+        "modalidade": "Ensino Médio",
+        "outras_ofertas_educacionais": "",
+        "latitude": "-23.9692813",
+        "longitude": "-46.383432",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012212",
+        "created_at": "2021-04-01T01:05:01.085Z",
+        "updated_at": "2021-04-01T01:15:14.344Z"
+      }
+    },
+    "material": {
+      "id": "26358a68-dddb-4e7d-8c06-607e337f61ee",
+      "nome": "Lápis",
+      "created_at": "2021-04-01T01:05:01.085Z",
+      "updated_at": "2021-04-01T01:05:01.085Z"
     },
     "doador": null
   }
