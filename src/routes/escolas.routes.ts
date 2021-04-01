@@ -1,8 +1,9 @@
 import { Router } from "express";
 
 import listEscolasController from "../useCases/listEscolas";
-import listEscolasByRankingController from "../useCases/listEscolasByRanking";
 import listEscolasByNomeController from "../useCases/listEscolasByNome";
+import listEscolasByRankingController from "../useCases/listEscolasByRanking";
+
 
 const escolasRoutes = Router();
 
