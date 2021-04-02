@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import createPedidosController from "../useCases/createPedidos";
+import finishPedidoController from "../useCases/finishPedido";
 import listPedidosController from "../useCases/listPedidos";
 import listPedidosByAlunosController from "../useCases/listPedidosByAlunos";
 import listPedidosByAlunosAguardandoDoador from "../useCases/listPedidosByAlunosAguardandoDoador";
@@ -14,6 +15,10 @@ pedidosRoutes.post("/", (request, response) => {
 
 pedidosRoutes.put("/:id_pedido/doador-encontrado", (request, response) => {
   return updatePedidoDoadorEncontradoController().handle(request, response);
+});
+
+pedidosRoutes.put("/:id_pedido/doacao-concluida", (request, response) => {
+  return finishPedidoController().handle(request, response);
 });
 
 pedidosRoutes.get("/", (request, response) => {

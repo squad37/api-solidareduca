@@ -17,6 +17,11 @@ interface IUpdateDoadorEncontrado {
   previsao_entrega: string;
 }
 
+interface IFinalizarPedido {
+  id_pedido: string;
+  mensagem_agradecimento: string;
+}
+
 @EntityRepository(Pedido)
 class PedidosRepository {
   private repository: Repository<Pedido>;
@@ -79,6 +84,26 @@ class PedidosRepository {
         endereco_entrega,
         previsao_entrega,
         situacao: "doador encontrado",
+      })
+      .where({ id: id_pedido })
+      .execute();
+
+    const pedido = await this.repository.findOne({ id: id_pedido });
+
+    return pedido;
+  }
+
+  // Altera a situação do pedido para: Doação concluída
+  async finalizarPedido({
+    id_pedido,
+    mensagem_agradecimento,
+  }: IFinalizarPedido): Promise<Pedido> {
+    await this.repository
+      .createQueryBuilder()
+      .update()
+      .set({
+        mensagem_agradecimento,
+        situacao: "Doação concluída",
       })
       .where({ id: id_pedido })
       .execute();

@@ -1,10 +1,10 @@
 import { Response, Request } from "express";
 
-import { updatePedidoDoadorEncontradoUseCase } from "./updatePedidoDoadorEncontradoUseCase";
+import { UpdatePedidoDoadorEncontradoUseCase } from "./updatePedidoDoadorEncontradoUseCase";
 
 class UpdatePedidoDoadorEncontradoController {
   constructor(
-    private updatePedidoDoadorEncontradoUseCase: updatePedidoDoadorEncontradoUseCase
+    private updatePedidoDoadorEncontradoUseCase: UpdatePedidoDoadorEncontradoUseCase
   ) {}
 
   async handle(request: Request, response: Response): Promise<Response> {
