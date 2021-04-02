@@ -1,9 +1,12 @@
+import { hash } from "bcrypt";
+
 import { AlunosRepository } from "../../repositories/AlunosRepository";
 import { EscolasRepository } from "../../repositories/EscolasRepository";
 
 interface IRequest {
   nome: string;
   email: string;
+  senha: string;
   cpf: string;
   cep: string;
   uf: string;
@@ -21,6 +24,7 @@ class CreateAlunosUseCase {
   async execute({
     nome,
     email,
+    senha,
     cpf,
     cep,
     uf,
@@ -49,9 +53,13 @@ class CreateAlunosUseCase {
     // Acrescenta um ponto a escola
     await this.escolasRepository.patchPontos(id_escola);
 
+    // Encriptação da senha
+    const senhaHash = await hash(senha, 8);
+
     const aluno = {
       nome,
       email,
+      senha: senhaHash,
       cpf,
       cep,
       uf,

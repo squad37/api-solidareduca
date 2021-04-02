@@ -61,7 +61,7 @@ class PedidosRepository {
   }
 
   async list(): Promise<Pedido[]> {
-    const pedidos = this.repository.find();
+    const pedidos = await this.repository.find();
     return pedidos;
   }
 
