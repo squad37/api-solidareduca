@@ -18,12 +18,15 @@ class Doador {
   @Column()
   email: string;
 
+  @Column({ select: false })
+  senha: string;
+
   @Column()
   cpf: string;
 
   @Column()
   pontos: number;
-  
+
   @Column()
   cep: string;
 

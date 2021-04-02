@@ -912,6 +912,18 @@ A rota recebe `nome email cpf cep uf endereco`  do corpo da requisição.
 ```
 Este objeto é inserido no banco de dados na tabela doadores.
 
+### POST `/doadores/autenticacao`
+
+A rota recebe `email, senha ` dentro do corpo da requisição, compara essas informações com os dados do banco de dados. Se o email e a senha estiverem corretos é retornado:
+
+```jsx
+{
+  "id_doador": "a34783b1-7d8c-4b47-a72d-c3bcd6e776f8",
+  "email_doador": "teste@email.com",
+  "nome_doador": "Gilson"
+}
+```
+
 ### GET `/doadores`
 
 Retorna todos os doadores cadastrados.
