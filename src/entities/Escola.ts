@@ -83,6 +83,7 @@ class Escola {
 
   @UpdateDateColumn()
   updated_at: Date;
+  
 
   constructor() {
     if (!this.id) {
