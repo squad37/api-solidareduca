@@ -42,6 +42,8 @@ Este objeto é inserido no banco de dados na tabela alunos.
 
 Retorna todos os alunos cadastrados em conjunto com a escola que está matriculado.
 
+Retorno:
+
 ```jsx
 [
     {
@@ -91,6 +93,8 @@ Retorna todos os alunos cadastrados em conjunto com a escola que está matricula
 A rota recebe o `id_escola` pelo `request.params` e retorna todos os alunos de uma determinada escola.
 
 Exemplo de como utilizar: `http://localhost:3333/alunos/127479e0-20d5-45a4-9e93-846ac56b9375`
+
+Retorno:
 
 ```jsx
 [
@@ -444,6 +448,7 @@ A rota recebe o `id_aluno` pelo `request.params` e retorna todos os pedidos de u
 
 Exemplo de como utilizar: `http://localhost:3333/pedidos/60b76f8e-91bd-4cde-b8ef-2b909089c952`
 
+Retorno:
 ```jsx
 [
   {
@@ -578,6 +583,7 @@ A rota recebe o `id_aluno` pelo `request.params` e retorna os pedidos de um dete
 
 Exemplo de utilização: `http://localhost:3333/pedidos/0f617671-e275-4602-97a3-a2108036e897/aguardando-doador`
 
+Retorno:
 ```jsx
 [
   {
@@ -706,6 +712,90 @@ Exemplo de utilização: `http://localhost:3333/pedidos/0f617671-e275-4602-97a3-
   }
 ]
 ```
+### PUT `/pedidos/:id_pedido/doador-encontrado`
+
+A rota recebe `id_pedido`pelo `request.params`, `id_doador doador_anonimo local_entrega endereco_entrega previsao_entrega` pelo corpo da requisição. Altera a situação do pedido, de `aguardando doador` para `doador encontrado`
+
+Exemplo de como utilizar: `http://localhost:3333/pedidos/d8f31764-7615-48a1-8931-5772536235fb/doador-encontrado`
+
+
+Exemplo de como fica o pedido:
+
+```jsx
+{
+    "id": "d8f31764-7615-48a1-8931-5772536235fb",
+    "id_aluno": "fe1cc814-479f-4251-bc95-6580dd85c340",
+    "id_material": "3bdbac6a-47aa-40a1-9ff6-d79412ae881a",
+    "id_doador": "3e5616c0-5fe0-4ff5-8b97-26e2f8708fb4",
+    "doador_anonimo": false,
+    "local_entrega": "Residência do Aluno",
+    "endereco_entrega": "Rua Teste",
+    "situacao": "doador encontrado",
+    "quantidade": "19",
+    "previsao_entrega": "2021-05-01T03:00:00.000Z",
+    "mensagem_agradecimento": null,
+    "created_at": "2021-04-01T23:48:52.425Z",
+    "updated_at": "2021-04-01T23:51:26.249Z",
+    "aluno": {
+      "id": "fe1cc814-479f-4251-bc95-6580dd85c340",
+      "nome": "Vitor",
+      "email": "vitor@solidareduca.com.br",
+      "cpf": "111222333431111111111",
+      "cep": "11222331",
+      "uf": "SP",
+      "endereco": "Rua Teste",
+      "nome_responsavel": "Romário",
+      "created_at": "2021-04-01T23:27:19.270Z",
+      "updated_at": "2021-04-01T23:27:19.270Z",
+      "id_escola": "c0c7605d-2f74-496d-8ad3-63119997e146",
+      "escola": {
+        "id": "c0c7605d-2f74-496d-8ad3-63119997e146",
+        "id_inep": "35012324",
+        "nome": "ARMANDO VICTORIO BEI",
+        "parceira": true,
+        "pontos": 1,
+        "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+        "uf": "SP",
+        "municipio": "São Vicente",
+        "localizacao": "Urbana",
+        "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+        "endereco": "CARIJOS, 1020 RUA. PARQUE SAO VICENTE. 11360-100 São Vicente - SP.",
+        "telefone": "(13) 34649493",
+        "categoria_administrativa": "Pública",
+        "dependencia_administrativa": "Estadual",
+        "categoria_escola_privada": "Não Informado",
+        "conveniada_poder_publico": "Não",
+        "regulamentacao_conselho_educacao": "Sim",
+        "porte": "Mais de 1000 matrículas de escolarização",
+        "modalidade": "Ensino Fundamental, Ensino Médio",
+        "outras_ofertas_educacionais": "",
+        "latitude": "-23.9497288",
+        "longitude": "-46.3978776",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012324",
+        "created_at": "2021-04-01T23:26:11.904Z",
+        "updated_at": "2021-04-01T23:27:19.263Z"
+      }
+    },
+    "material": {
+      "id": "3bdbac6a-47aa-40a1-9ff6-d79412ae881a",
+      "nome": "Caderno Única Matéria",
+      "created_at": "2021-04-01T23:26:11.904Z",
+      "updated_at": "2021-04-01T23:26:11.904Z"
+    },
+    "doador": {
+      "id": "3e5616c0-5fe0-4ff5-8b97-26e2f8708fb4",
+      "nome": "Gilson",
+      "email": "teste@email.com",
+      "cpf": "11133344455",
+      "pontos": 0,
+      "cep": "11222333",
+      "uf": "sp",
+      "endereco": "a",
+      "created_at": "2021-04-01T23:28:44.276Z",
+      "updated_at": "2021-04-01T23:28:44.276Z"
+    }
+```
+
 ### POST `/doadores`
 
 A rota recebe `nome email cpf cep uf endereco`  do corpo da requisição.
@@ -743,10 +833,6 @@ Retorna todos os doadores cadastrados.
     }   
 ]
 ```
-
-
-
-
 ## 💻 Tecnologias
 
 Essa aplicacão foi desenvolvida com as seguintes tecnologias:
