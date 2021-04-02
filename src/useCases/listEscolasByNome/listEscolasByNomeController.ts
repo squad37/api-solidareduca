@@ -9,9 +9,7 @@ class ListEscolasByNomeController {
     try {
       const { nome } = request.params;
 
-      const escolaBynome = await this.listEscolasByNomeUseCase.execute(
-        nome
-      );
+      const escolaBynome = await this.listEscolasByNomeUseCase.execute(nome);
 
       return response.status(200).json(escolaBynome);
     } catch (error) {
