@@ -46,6 +46,17 @@ class DoadoresRepository {
     return doador;
   }
 
+  async selectSenha(email: string): Promise<string> {
+    const doador = await this.repository
+      .createQueryBuilder()
+      .select("senha")
+      .addSelect("Doador.senha")
+      .where({ email })
+      .getOne();
+
+    return doador.senha;
+  }
+
   async list(): Promise<Doador[]> {
     const doadores = await this.repository.find();
     return doadores;
