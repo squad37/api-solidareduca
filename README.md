@@ -890,9 +890,6 @@ Exemplo de como fica um determinado pedido após a utilização desta rota:
     }
   }
 ```
-
-
-
 ### POST `/doadores`
 
 A rota recebe `nome email cpf cep uf endereco`  do corpo da requisição.
@@ -943,7 +940,7 @@ Retorna todos os doadores cadastrados.
 ]
 ```
 
-### GET `/doadores`
+### GET `/materiais`
 
 Retorna todos os materiais cadastrados.
 
