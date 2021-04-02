@@ -33,13 +33,13 @@ class AuthenticateAlunoUseCase {
       throw new Error("Email ou senha incorreta!");
     }
 
-    const aluno: IResponse = {
+    const authenticatedAluno: IResponse = {
       id_aluno: userExists.id,
       email_aluno: userExists.email,
       nome_aluno: userExists.nome,
     };
 
-    return aluno;
+    return authenticatedAluno;
   }
 }
 

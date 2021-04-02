@@ -1,8 +1,11 @@
+import { hash } from "bcrypt";
+
 import { DoadoresRepository } from "../../repositories/DoadoresRepository";
 
 interface IRequest {
   nome: string;
   email: string;
+  senha: string;
   cpf: string;
   cep: string;
   uf: string;
@@ -14,6 +17,7 @@ class CreateDoadoresUseCase {
   async execute({
     nome,
     email,
+    senha,
     cpf,
     cep,
     uf,
@@ -31,9 +35,13 @@ class CreateDoadoresUseCase {
       throw new Error("Email já cadastrado anteriormente!");
     }
 
+    // Criação do hash da senha
+    const senhaHash = await hash(senha, 8);
+
     const doadores = {
       nome,
       email,
+      senha: senhaHash,
       cpf,
       cep,
       uf,
