@@ -331,7 +331,7 @@ Este objeto é iserido no banco de dados na tabela Pedidos.
 
 ### GET `/pedidos`
 
-A rota retorna todos os pedidos cadastrados.
+A rota retorna todos os pedidos cadastrados, mostrando primeiro os pedidos que foram atualizados recentemente.
 
 ```jsx
 {
@@ -456,7 +456,7 @@ A rota retorna todos os pedidos cadastrados.
 }
 ```
 ### GET `/pedidos/:id_aluno`
-A rota recebe o `id_aluno` pelo `request.params` e retorna todos os pedidos de um determinado aluno, independente da situação do pedido(aguardando doador, doador encontrado, pedido recebido), por ordem de criação.
+A rota recebe o `id_aluno` pelo `request.params` e retorna todos os pedidos de um determinado aluno, independente da situação do pedido(aguardando doador, doador encontrado, pedido recebido), por ordem de criação, mostrando sempre os mais novos referente a criação.
 
 Exemplo de como utilizar: `http://localhost:3333/pedidos/60b76f8e-91bd-4cde-b8ef-2b909089c952`
 
@@ -591,7 +591,7 @@ Retorno:
 ```
 ### GET `/pedidos/:id_aluno/aguardando-doador`
 
-A rota recebe o `id_aluno` pelo `request.params` e retorna os pedidos de um determinado aluno que estão na situação: aguardando-doador.
+A rota recebe o `id_aluno` pelo `request.params` e retorna os pedidos de um determinado aluno que estão na situação: aguardando-doador, mostrando sempre os pedidos mais antigos.
 
 Exemplo de utilização: `http://localhost:3333/pedidos/0f617671-e275-4602-97a3-a2108036e897/aguardando-doador`
 
@@ -724,6 +724,165 @@ Retorno:
   }
 ]
 ```
+### GET `/pedidos/doador/:id_doador`
+A rota recebe o `id_doador` pelo `request.params` e retorna todos os pedidos que um determinado doador se prontificou a participar, independente da situação do pedido(doador encontrado ou pedido recebido), mostrando sempre os mais novos em relação as atualizações do pedido.
+
+Exemplo de como utilizar: `http://localhost:3333/pedidos/doador/a34783b1-7d8c-4b47-a72d-c3bcd6e776f8`
+
+Retorno:
+```jsx
+[
+  {
+    "id": "52047b1c-3c02-4f60-ba0a-5ceced0ff191",
+    "id_aluno": "e2760b10-bf72-475a-baeb-e6077ceaed0d",
+    "id_material": "262876cd-c6a8-4163-b082-4bcec2212202",
+    "id_doador": "a34783b1-7d8c-4b47-a72d-c3bcd6e776f8",
+    "doador_anonimo": false,
+    "local_entrega": "Escola",
+    "endereco_entrega": "Rua Teste",
+    "situacao": "Doação concluída",
+    "quantidade": "2",
+    "previsao_entrega": "2021-05-01T03:00:00.000Z",
+    "mensagem_agradecimento": "Obrigado pela doação",
+    "created_at": "2021-04-02T21:34:02.131Z",
+    "updated_at": "2021-04-02T23:10:25.910Z",
+    "aluno": {
+      "id": "e2760b10-bf72-475a-baeb-e6077ceaed0d",
+      "nome": "Vitor",
+      "email": "vitor@solidareduca.com.br",
+      "cpf": "111222333431111111111",
+      "cep": "11222331",
+      "uf": "SP",
+      "endereco": "Rua Teste",
+      "nome_responsavel": "Romário",
+      "created_at": "2021-04-02T16:25:34.552Z",
+      "updated_at": "2021-04-02T16:25:34.552Z",
+      "id_escola": "03618350-0491-4825-97a9-108d817d2d3b",
+      "escola": {
+        "id": "03618350-0491-4825-97a9-108d817d2d3b",
+        "id_inep": "35012324",
+        "nome": "ARMANDO VICTORIO BEI",
+        "parceira": true,
+        "pontos": 14,
+        "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+        "uf": "SP",
+        "municipio": "São Vicente",
+        "localizacao": "Urbana",
+        "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+        "endereco": "CARIJOS, 1020 RUA. PARQUE SAO VICENTE. 11360-100 São Vicente - SP.",
+        "telefone": "(13) 34649493",
+        "categoria_administrativa": "Pública",
+        "dependencia_administrativa": "Estadual",
+        "categoria_escola_privada": "Não Informado",
+        "conveniada_poder_publico": "Não",
+        "regulamentacao_conselho_educacao": "Sim",
+        "porte": "Mais de 1000 matrículas de escolarização",
+        "modalidade": "Ensino Fundamental, Ensino Médio",
+        "outras_ofertas_educacionais": "",
+        "latitude": "-23.9497288",
+        "longitude": "-46.3978776",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012324",
+        "created_at": "2021-04-02T16:15:41.512Z",
+        "updated_at": "2021-04-02T23:10:25.934Z"
+      }
+    },
+    "material": {
+      "id": "262876cd-c6a8-4163-b082-4bcec2212202",
+      "nome": "Caderno Única Matéria",
+      "created_at": "2021-04-02T16:15:41.512Z",
+      "updated_at": "2021-04-02T16:15:41.512Z"
+    },
+    "doador": {
+      "id": "a34783b1-7d8c-4b47-a72d-c3bcd6e776f8",
+      "nome": "Gilson2",
+      "email": "teste2@email.com",
+      "cpf": "11133344455444",
+      "pontos": 1,
+      "cep": "11222333",
+      "uf": "sp",
+      "endereco": "a",
+      "created_at": "2021-04-02T19:13:13.259Z",
+      "updated_at": "2021-04-02T23:10:25.927Z"
+    }
+  },
+  {
+    "id": "784e055f-f302-4530-bdcf-13dfe7c2c0bf",
+    "id_aluno": "1085fa85-0fca-42d3-941d-db3f2495dbbc",
+    "id_material": "63f545c2-25b5-4e3c-b258-cf5872833320",
+    "id_doador": "a34783b1-7d8c-4b47-a72d-c3bcd6e776f8",
+    "doador_anonimo": false,
+    "local_entrega": "Escola",
+    "endereco_entrega": "Rua Teste2",
+    "situacao": "doador encontrado",
+    "quantidade": "5",
+    "previsao_entrega": "2021-05-01T03:00:00.000Z",
+    "mensagem_agradecimento": null,
+    "created_at": "2021-04-02T23:03:59.940Z",
+    "updated_at": "2021-04-02T23:09:24.803Z",
+    "aluno": {
+      "id": "1085fa85-0fca-42d3-941d-db3f2495dbbc",
+      "nome": "Julio",
+      "email": "julio@solidareduca.com.br",
+      "cpf": "111222333431111111111111",
+      "cep": "11222331",
+      "uf": "SP",
+      "endereco": "Rua Teste",
+      "nome_responsavel": "Romário",
+      "created_at": "2021-04-02T17:27:38.452Z",
+      "updated_at": "2021-04-02T17:27:38.452Z",
+      "id_escola": "03618350-0491-4825-97a9-108d817d2d3b",
+      "escola": {
+        "id": "03618350-0491-4825-97a9-108d817d2d3b",
+        "id_inep": "35012324",
+        "nome": "ARMANDO VICTORIO BEI",
+        "parceira": true,
+        "pontos": 14,
+        "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+        "uf": "SP",
+        "municipio": "São Vicente",
+        "localizacao": "Urbana",
+        "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+        "endereco": "CARIJOS, 1020 RUA. PARQUE SAO VICENTE. 11360-100 São Vicente - SP.",
+        "telefone": "(13) 34649493",
+        "categoria_administrativa": "Pública",
+        "dependencia_administrativa": "Estadual",
+        "categoria_escola_privada": "Não Informado",
+        "conveniada_poder_publico": "Não",
+        "regulamentacao_conselho_educacao": "Sim",
+        "porte": "Mais de 1000 matrículas de escolarização",
+        "modalidade": "Ensino Fundamental, Ensino Médio",
+        "outras_ofertas_educacionais": "",
+        "latitude": "-23.9497288",
+        "longitude": "-46.3978776",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012324",
+        "created_at": "2021-04-02T16:15:41.512Z",
+        "updated_at": "2021-04-02T23:10:25.934Z"
+      }
+    },
+    "material": {
+      "id": "63f545c2-25b5-4e3c-b258-cf5872833320",
+      "nome": "Lápis",
+      "created_at": "2021-04-02T16:15:41.512Z",
+      "updated_at": "2021-04-02T16:15:41.512Z"
+    },
+    "doador": {
+      "id": "a34783b1-7d8c-4b47-a72d-c3bcd6e776f8",
+      "nome": "Gilson2",
+      "email": "teste2@email.com",
+      "cpf": "11133344455444",
+      "pontos": 1,
+      "cep": "11222333",
+      "uf": "sp",
+      "endereco": "a",
+      "created_at": "2021-04-02T19:13:13.259Z",
+      "updated_at": "2021-04-02T23:10:25.927Z"
+    }
+  }
+]
+```
+
+
+
 ### PUT `/pedidos/:id_pedido/doador-encontrado`
 
 A rota recebe `id_pedido`pelo `request.params`, `id_doador doador_anonimo local_entrega endereco_entrega previsao_entrega` pelo corpo da requisição. Altera a situação do pedido, de `aguardando doador` para `doador encontrado`
@@ -892,7 +1051,7 @@ Exemplo de como fica um determinado pedido após a utilização desta rota:
 ```
 ### POST `/doadores`
 
-A rota recebe `nome email cpf cep uf endereco`  do corpo da requisição.
+A rota recebe `nome email senha cpf cep uf endereco`  do corpo da requisição.
 
 É criado um objeto com as seguintes informações:  
 

@@ -5,6 +5,7 @@ import finishPedidoController from "../useCases/finishPedido";
 import listPedidosController from "../useCases/listPedidos";
 import listPedidosByAlunosController from "../useCases/listPedidosByAlunos";
 import listPedidosByAlunosAguardandoDoador from "../useCases/listPedidosByAlunosAguardandoDoador";
+import listPedidosByDoadorController from "../useCases/listPedidosByDoador";
 import updatePedidoDoadorEncontradoController from "../useCases/updatePedidoDoadorEncontrado";
 
 const pedidosRoutes = Router();
@@ -31,6 +32,10 @@ pedidosRoutes.get("/:id_aluno", (request, response) => {
 
 pedidosRoutes.get("/:id_aluno/aguardando-doador", (request, response) => {
   return listPedidosByAlunosAguardandoDoador().handle(request, response);
+});
+
+pedidosRoutes.get("/doador/:id_doador", (request, response) => {
+  return listPedidosByDoadorController().handle(request, response);
 });
 
 export { pedidosRoutes };
