@@ -6,6 +6,11 @@ class ListAlunosUseCase {
 
   async execute(): Promise<Aluno[]> {
     const alunos = await this.alunosRepository.list();
+
+    if (alunos.length === 0) {
+      throw new Error("Nenhum aluno cadastrado!");
+    }
+
     return alunos;
   }
 }
