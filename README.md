@@ -890,9 +890,6 @@ Exemplo de como fica um determinado pedido após a utilização desta rota:
     }
   }
 ```
-
-
-
 ### POST `/doadores`
 
 A rota recebe `nome email cpf cep uf endereco`  do corpo da requisição.
@@ -940,6 +937,64 @@ Retorna todos os doadores cadastrados.
         "endereco": "Alameda"
                       
     }   
+]
+```
+### GET `/materiais`
+
+Retorna todos os materiais cadastrados.
+
+Exemplo de retorno:
+
+```jsx
+[
+  {
+    "id": "262876cd-c6a8-4163-b082-4bcec2212202",
+    "nome": "Caderno Única Matéria",
+    "created_at": "2021-04-02T16:15:41.512Z",
+    "updated_at": "2021-04-02T16:15:41.512Z"
+  },
+  {
+    "id": "fb146722-2407-433a-9b76-e269fb1364cc",
+    "nome": "Caderno 10 Matérias",
+    "created_at": "2021-04-02T16:15:41.512Z",
+    "updated_at": "2021-04-02T16:15:41.512Z"
+  },
+  {
+    "id": "c7f3535c-632e-423c-920d-86a006ac023b",
+    "nome": "Caderno 20 Matérias",
+    "created_at": "2021-04-02T16:15:41.512Z",
+    "updated_at": "2021-04-02T16:15:41.512Z"
+  },
+  {
+    "id": "7708b19a-3372-49e2-99de-0a4df7928b4f",
+    "nome": "Mochila",
+    "created_at": "2021-04-02T16:15:41.512Z",
+    "updated_at": "2021-04-02T16:15:41.512Z"
+  },
+  {
+    "id": "62af6e96-a249-4349-82c8-b15fe7154923",
+    "nome": "Estojo",
+    "created_at": "2021-04-02T16:15:41.512Z",
+    "updated_at": "2021-04-02T16:15:41.512Z"
+  },
+  {
+    "id": "63f545c2-25b5-4e3c-b258-cf5872833320",
+    "nome": "Lápis",
+    "created_at": "2021-04-02T16:15:41.512Z",
+    "updated_at": "2021-04-02T16:15:41.512Z"
+  },
+  {
+    "id": "ee1d75e8-cd08-4f7c-99af-8bc1cb0c2f5c",
+    "nome": "Lápis de Cor",
+    "created_at": "2021-04-02T16:15:41.512Z",
+    "updated_at": "2021-04-02T16:15:41.512Z"
+  },
+  {
+    "id": "12a48f83-cb54-4d52-b19e-5a24bbf3f1b6",
+    "nome": "Caneta Esferográfica(Azul, Vermelha, Preta ou Verde)",
+    "created_at": "2021-04-02T16:15:41.512Z",
+    "updated_at": "2021-04-02T16:15:41.512Z"
+  }
 ]
 ```
 ## 💻 Tecnologias
