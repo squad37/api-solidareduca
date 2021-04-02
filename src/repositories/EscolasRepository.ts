@@ -17,6 +17,13 @@ class EscolasRepository {
     await this.repository.save(escola);
   }
 
+  async soma10Pontos(id: string): Promise<void> {
+    const escola = await this.findOne(id);
+    escola.pontos += 10;
+
+    await this.repository.save(escola);
+  }
+
   async findOne(id: string): Promise<Escola> {
     const escola = await this.repository.findOne({ id });
     return escola;

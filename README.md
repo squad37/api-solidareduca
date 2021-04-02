@@ -795,6 +795,91 @@ Exemplo de como fica o pedido:
       "updated_at": "2021-04-01T23:28:44.276Z"
     }
 ```
+### PUT `pedidos/:id_pedido/doacao-concluida`
+
+A rota recebe o `id_pedido` pelo `request_params` e `mensagem_agradecimento` pelo corpo da requisição, e altera a situação do pedido para: Doacão concluída. O doador recebe 1 ponto e caso a Escola tenha recebido a doação, ela recebe 10 pontos.
+
+Exemplo de como utilizar: `http://localhost:3333/pedidos/1fb7eaf6-69c1-421b-87c0-ab39976b4be7/doacao-concluida`.
+
+Exemplo de como fica um determinado pedido após a utilização desta rota:
+
+```jsx
+ {
+    "id": "1fb7eaf6-69c1-421b-87c0-ab39976b4be7",
+    "id_aluno": "fe1cc814-479f-4251-bc95-6580dd85c340",
+    "id_material": "3bdbac6a-47aa-40a1-9ff6-d79412ae881a",
+    "id_doador": "3e5616c0-5fe0-4ff5-8b97-26e2f8708fb4",
+    "doador_anonimo": false,
+    "local_entrega": "Escola",
+    "endereco_entrega": "Rua Teste",
+    "situacao": "Doação concluída",
+    "quantidade": "15",
+    "previsao_entrega": "2021-05-01T03:00:00.000Z",
+    "mensagem_agradecimento": "Obrigado pela doação",
+    "created_at": "2021-04-02T03:36:41.134Z",
+    "updated_at": "2021-04-02T03:38:00.780Z",
+    "aluno": {
+      "id": "fe1cc814-479f-4251-bc95-6580dd85c340",
+      "nome": "Vitor",
+      "email": "vitor@solidareduca.com.br",
+      "cpf": "111222333431111111111",
+      "cep": "11222331",
+      "uf": "SP",
+      "endereco": "Rua Teste",
+      "nome_responsavel": "Romário",
+      "created_at": "2021-04-01T23:27:19.270Z",
+      "updated_at": "2021-04-01T23:27:19.270Z",
+      "id_escola": "c0c7605d-2f74-496d-8ad3-63119997e146",
+      "escola": {
+        "id": "c0c7605d-2f74-496d-8ad3-63119997e146",
+        "id_inep": "35012324",
+        "nome": "ARMANDO VICTORIO BEI",
+        "parceira": true,
+        "pontos": 11,
+        "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+        "uf": "SP",
+        "municipio": "São Vicente",
+        "localizacao": "Urbana",
+        "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+        "endereco": "CARIJOS, 1020 RUA. PARQUE SAO VICENTE. 11360-100 São Vicente - SP.",
+        "telefone": "(13) 34649493",
+        "categoria_administrativa": "Pública",
+        "dependencia_administrativa": "Estadual",
+        "categoria_escola_privada": "Não Informado",
+        "conveniada_poder_publico": "Não",
+        "regulamentacao_conselho_educacao": "Sim",
+        "porte": "Mais de 1000 matrículas de escolarização",
+        "modalidade": "Ensino Fundamental, Ensino Médio",
+        "outras_ofertas_educacionais": "",
+        "latitude": "-23.9497288",
+        "longitude": "-46.3978776",
+        "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012324",
+        "created_at": "2021-04-01T23:26:11.904Z",
+        "updated_at": "2021-04-02T03:38:00.803Z"
+      }
+    },
+    "material": {
+      "id": "3bdbac6a-47aa-40a1-9ff6-d79412ae881a",
+      "nome": "Caderno Única Matéria",
+      "created_at": "2021-04-01T23:26:11.904Z",
+      "updated_at": "2021-04-01T23:26:11.904Z"
+    },
+    "doador": {
+      "id": "3e5616c0-5fe0-4ff5-8b97-26e2f8708fb4",
+      "nome": "Gilson",
+      "email": "teste@email.com",
+      "cpf": "11133344455",
+      "pontos": 2,
+      "cep": "11222333",
+      "uf": "sp",
+      "endereco": "a",
+      "created_at": "2021-04-01T23:28:44.276Z",
+      "updated_at": "2021-04-02T03:38:00.796Z"
+    }
+  }
+```
+
+
 
 ### POST `/doadores`
 
