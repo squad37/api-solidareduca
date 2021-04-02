@@ -52,8 +52,19 @@ class AlunosRepository {
     return alunos;
   }
 
+  async selectSenha(email: string): Promise<string> {
+    const aluno = await this.repository
+      .createQueryBuilder()
+      .select("senha")
+      .addSelect("Aluno.senha")
+      .where({ email })
+      .getOne();
+
+    return aluno.senha;
+  }
+
   async list(): Promise<Aluno[]> {
-    const alunos = this.repository.find();
+    const alunos = await this.repository.find();
     return alunos;
   }
 }

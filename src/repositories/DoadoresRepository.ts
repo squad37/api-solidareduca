@@ -37,17 +37,17 @@ class DoadoresRepository {
   }
 
   async findByCpf(cpf: string): Promise<Doador> {
-    const doador = this.repository.findOne({ cpf });
+    const doador = await this.repository.findOne({ cpf });
     return doador;
   }
 
   async findByEmail(email: string): Promise<Doador> {
-    const doador = this.repository.findOne({ email });
+    const doador = await this.repository.findOne({ email });
     return doador;
   }
 
   async list(): Promise<Doador[]> {
-    const doadores = this.repository.find();
+    const doadores = await this.repository.find();
     return doadores;
   }
 }

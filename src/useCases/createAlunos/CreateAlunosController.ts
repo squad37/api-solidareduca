@@ -10,6 +10,7 @@ class CreateAlunosController {
       const {
         nome,
         email,
+        senha,
         cpf,
         cep,
         uf,
@@ -21,6 +22,7 @@ class CreateAlunosController {
       await this.createAlunosUseCase.execute({
         nome,
         email,
+        senha,
         cpf,
         cep,
         uf,

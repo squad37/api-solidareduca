@@ -22,6 +22,9 @@ class Aluno {
   @Column()
   email: string;
 
+  @Column({ select: false })
+  senha: string;
+
   @Column()
   cpf: string;
 
