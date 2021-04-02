@@ -6,6 +6,7 @@ import {
   JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  TableInheritance,
 } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
