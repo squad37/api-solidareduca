@@ -17,6 +17,10 @@ class ListPedidosByDoadorUseCase {
 
     const pedidos = await this.pedidosRepository.findByDoador(id_doador);
 
+    if (pedidos.length === 0) {
+      throw new Error("Este doador não está participando de nenhum pedido");
+    }
+
     return pedidos;
   }
 }
