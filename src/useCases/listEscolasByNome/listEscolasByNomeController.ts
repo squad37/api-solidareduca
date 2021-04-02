@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ListEscolasByNomeUseCase } from "./listEscolasByNomeUseCase";
+import { ListEscolasByNomeUseCase } from "./ListEscolasByNomeUseCase";
 
 class ListEscolasByNomeController {
   constructor(private listEscolasByNomeUseCase: ListEscolasByNomeUseCase) {}
