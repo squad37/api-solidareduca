@@ -24,7 +24,6 @@ class FinishPedidoUseCase {
       throw new Error("Pedido não encontrado!");
     }
 
-    console.log(pedidoExists);
     if (pedidoExists.situacao !== "doador encontrado") {
       throw new Error(
         "Apenas é possível finalizar o pedido se o mesmo estiver na situação: doador encontrado"
