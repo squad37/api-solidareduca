@@ -997,6 +997,7 @@ Exemplo de retorno:
     "updated_at": "2021-04-02T16:15:41.512Z"
   }
 ]
+```
 ## 💻 Tecnologias
 
 Essa aplicacão foi desenvolvida com as seguintes tecnologias:
