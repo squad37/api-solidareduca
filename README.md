@@ -20,7 +20,7 @@ Desenvolvemos também um **ranking** para as **escolas**, com o objetivo delas d
 
 ### POST `/alunos`
 
-A rota recebe `nome email cpf cep uf endereco nome_responsavel id_escola` dentro do corpo da requisição.
+A rota recebe `nome email senha cpf cep uf endereco nome_responsavel id_escola` dentro do corpo da requisição.
 
 É criado um objeto com as seguintes informações:  
 
@@ -37,6 +37,18 @@ A rota recebe `nome email cpf cep uf endereco nome_responsavel id_escola` dentro
 }
 ```
 Este objeto é inserido no banco de dados na tabela alunos.
+
+### POST `/alunos/autenticacao`
+
+A rota recebe `email, senha ` dentro do corpo da requisição, compara essas informações com os dados do banco de dados. Se o email e a senha estiverem corretos é retornado:
+
+```jsx
+{
+  "id_aluno": "e2760b10-bf72-475a-baeb-e6077ceaed0d",
+  "email_aluno": "vitor@solidareduca.com.br",
+  "nome_aluno": "Vitor"
+}
+```
 
 ### GET `/alunos`
 
