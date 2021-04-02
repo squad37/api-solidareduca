@@ -939,7 +939,6 @@ Retorna todos os doadores cadastrados.
     }   
 ]
 ```
-
 ### GET `/materiais`
 
 Retorna todos os materiais cadastrados.
