@@ -29,7 +29,7 @@ class SearchEscolasUseCase {
 
     // Realiza filtro apenas pelo UF
     if (nome === "" && uf !== "") {
-      const escola = await this.escolasRepository.searchByUf(nome);
+      const escola = await this.escolasRepository.searchByUf(uf);
 
       if (escola.length === 0) {
         throw new Error("Nenhuma escola encontrada.");
@@ -48,6 +48,8 @@ class SearchEscolasUseCase {
 
       return escola;
     }
+
+    throw new Error("Nenhuma escola encontrada");
   }
 }
 
