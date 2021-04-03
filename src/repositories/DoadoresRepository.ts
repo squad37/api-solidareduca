@@ -58,7 +58,18 @@ class DoadoresRepository {
   }
 
   async list(): Promise<Doador[]> {
-    const doadores = await this.repository.find();
+    const doadores = await this.repository.find({ order: { nome: "ASC" } });
+    return doadores;
+  }
+
+  async listByRanking(): Promise<Doador[]> {
+    const doadores = await this.repository.find({
+      order: {
+        pontos: "DESC",
+        nome: "ASC",
+      },
+    });
+
     return doadores;
   }
 }

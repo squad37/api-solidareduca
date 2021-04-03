@@ -1049,9 +1049,10 @@ Exemplo de como fica um determinado pedido após a utilização desta rota:
     }
   }
 ```
-### PATCH `pedidos/:id_pedido/doador`
+### DELETE `pedidos/:id_pedido/doador`
 
-A rota recebe o `id_pedido ` pelo `request.params`. Esta rota é para o doador poder cancelar o seu interesse em um determinado pedido que esta na situação: `Doador Encontrado`. Se o pedido estiver em qualquer outra situação como: `Aguardando Doador `, `Doação Concluída` ou `Pedido Cancelado`, não será possível cancelar o interesse.
+A rota recebe o `id_pedido ` pelo `request.params`. Esta rota é para o doador poder cancelar o pedido que esta na situação: `Doador Encontrado`. Se o pedido estiver em qualquer outra situação como: `Aguardando Doador `, `Doação Concluída` ou `Pedido Cancelado`, não será possível cancelar o interesse.
+
 Como utilizar: `http://localhost:3333/pedidos/e86a576b-1697-4817-8c94-fe539417c8b9/doador`
 
 ### DELETE `pedidos/:id_pedido/aluno`
@@ -1109,6 +1110,42 @@ Retorna todos os doadores cadastrados.
     }   
 ]
 ```
+### GET `http://localhost:3333/doadores/ranking`
+
+Esta rota retorno uma lista de todos os doadores, ordenados pelo ranking de pontos.
+
+Como utilizar: /doadores/ranking
+
+```jsx
+[
+  {
+    "id": "0eed44de-35e5-4e14-bcf1-ae8f63e93e1c",
+    "nome": "Gilson3",
+    "email": "teste3@email.com",
+    "cpf": "1113334445544455",
+    "pontos": 2,
+    "cep": "11222333",
+    "uf": "sp",
+    "endereco": "a",
+    "created_at": "2021-04-03T02:52:04.560Z",
+    "updated_at": "2021-04-03T16:38:50.693Z"
+  },
+  {
+    "id": "3967ca8c-0223-4828-9bb7-c909fd3c34bb",
+    "nome": "Aloisio",
+    "email": "aloisio@email.com",
+    "cpf": "11133344455444556",
+    "pontos": 1,
+    "cep": "11222333",
+    "uf": "sp",
+    "endereco": "a",
+    "created_at": "2021-04-03T16:28:34.301Z",
+    "updated_at": "2021-04-03T16:37:34.358Z"
+  }
+]
+```
+
+
 ### GET `/materiais`
 
 Retorna todos os materiais cadastrados.

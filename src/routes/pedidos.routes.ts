@@ -20,7 +20,7 @@ pedidosRoutes.delete("/:id_pedido/aluno", (request, response) => {
   return deletePedidoByAlunoController().handle(request, response);
 });
 
-pedidosRoutes.patch("/:id_pedido/doador", (request, response) => {
+pedidosRoutes.delete("/:id_pedido/doador", (request, response) => {
   return cancelPedidoByDoadorController().handle(request, response);
 });
 
