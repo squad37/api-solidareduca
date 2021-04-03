@@ -45,7 +45,7 @@ class PedidosRepository {
     const pedidos = await this.repository.find({
       where: { id_aluno },
       order: {
-        created_at: "ASC",
+        created_at: "DESC",
       },
     });
     return pedidos;
@@ -55,13 +55,30 @@ class PedidosRepository {
   async findByAlunoAguardandoDoador(id_aluno: string): Promise<Pedido[]> {
     const pedidos = await this.repository.find({
       where: { id_aluno, situacao: "aguardando doador" },
+      order: {
+        created_at: "ASC",
+      },
+    });
+
+    return pedidos;
+  }
+
+  // Retorna todos os pedidos que determinado doador decidiu doar
+  async findByDoador(id_doador: string): Promise<Pedido[]> {
+    const pedidos = await this.repository.find({
+      where: { id_doador },
+      order: {
+        updated_at: "DESC",
+      },
     });
 
     return pedidos;
   }
 
   async list(): Promise<Pedido[]> {
-    const pedidos = await this.repository.find();
+    const pedidos = await this.repository.find({
+      order: { updated_at: "DESC" },
+    });
     return pedidos;
   }
 
