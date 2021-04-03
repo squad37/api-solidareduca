@@ -137,7 +137,7 @@ class PedidosRepository {
       .update()
       .set({
         deleted: true,
-        situacao: "Pedido Cancelado",
+        situacao: "Pedido Cancelado pelo Aluno",
       })
       .where({ id: id_pedido })
       .execute();
@@ -148,7 +148,8 @@ class PedidosRepository {
       .createQueryBuilder()
       .update()
       .set({
-        situacao: "Aguardando Doador",
+        situacao: "Pedido Cancelado pelo Doador",
+        deleted: true,
       })
       .where({ id: id_pedido })
       .execute();

@@ -12,7 +12,7 @@ class CancelPedidoByDoadorUseCase {
 
     if (pedidoExists.situacao !== "Doador Encontrado") {
       throw new Error(
-        "O Doador apenas consegue cancelar o interesse pela doação, se a situação do pedido for: Doador Encontrado"
+        "O Doador apenas consegue cancelar o pedido, se a situação do pedido for: Doador Encontrado"
       );
     }
 

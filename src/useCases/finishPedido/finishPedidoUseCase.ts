@@ -35,7 +35,7 @@ class FinishPedidoUseCase {
       mensagem_agradecimento,
     });
 
-    if (pedido.situacao !== "Doação concluída") {
+    if (pedido.situacao !== "Doação Concluída") {
       throw new Error("Pedido não finalizado!");
     }
 
