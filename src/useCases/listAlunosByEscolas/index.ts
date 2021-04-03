@@ -1,7 +1,7 @@
 import { AlunosRepository } from "../../repositories/AlunosRepository";
 import { EscolasRepository } from "../../repositories/EscolasRepository";
-import { ListAlunosByEscolasController } from "./listAlunosByEscolasController";
-import { ListAlunosByEscolasUseCase } from "./listAlunosByEscolasUseCase";
+import { ListAlunosByEscolasController } from "./ListAlunosByEscolasController";
+import { ListAlunosByEscolasUseCase } from "./ListAlunosByEscolasUseCase";
 
 // Cria todas as instâncias necessárias
 export default (): ListAlunosByEscolasController => {

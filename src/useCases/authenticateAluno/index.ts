@@ -1,6 +1,6 @@
 import { AlunosRepository } from "../../repositories/AlunosRepository";
-import { AuthenticateAlunoController } from "./authenticateAlunoController";
-import { AuthenticateAlunoUseCase } from "./authenticateAlunoUseCase";
+import { AuthenticateAlunoController } from "./AuthenticateAlunoController";
+import { AuthenticateAlunoUseCase } from "./AuthenticateAlunoUseCase";
 
 export default (): AuthenticateAlunoController => {
   const alunosRepository = new AlunosRepository();

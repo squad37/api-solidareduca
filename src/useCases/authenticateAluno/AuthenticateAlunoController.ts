@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { AuthenticateAlunoUseCase } from "./authenticateAlunoUseCase";
+import { AuthenticateAlunoUseCase } from "./AuthenticateAlunoUseCase";
 
 class AuthenticateAlunoController {
   constructor(private authenticateAlunoUseCase: AuthenticateAlunoUseCase) {}

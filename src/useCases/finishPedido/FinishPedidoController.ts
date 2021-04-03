@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { FinishPedidoUseCase } from "./finishPedidoUseCase";
+import { FinishPedidoUseCase } from "./FinishPedidoUseCase";
 
 class FinishPedidoController {
   constructor(private finishPedidoUseCase: FinishPedidoUseCase) {}
