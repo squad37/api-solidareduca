@@ -1,6 +1,6 @@
 import { Response, Request } from "express";
 
-import { AuthenticateDoadorUseCase } from "./authenticateDoadorUseCase";
+import { AuthenticateDoadorUseCase } from "./AuthenticateDoadorUseCase";
 
 class AuthenticateDoadorController {
   constructor(private authenticateDoadorUseCase: AuthenticateDoadorUseCase) {}

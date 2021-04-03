@@ -1,6 +1,6 @@
 import { PedidosRepository } from "../../repositories/PedidosRepository";
-import { UpdatePedidoDoadorEncontradoController } from "./updatePedidoDoadorEncontradoController";
-import { UpdatePedidoDoadorEncontradoUseCase } from "./updatePedidoDoadorEncontradoUseCase";
+import { UpdatePedidoDoadorEncontradoController } from "./UpdatePedidoDoadorEncontradoController";
+import { UpdatePedidoDoadorEncontradoUseCase } from "./UpdatePedidoDoadorEncontradoUseCase";
 
 export default (): UpdatePedidoDoadorEncontradoController => {
   const pedidosRepository = new PedidosRepository();

@@ -1,6 +1,6 @@
 import { Response, Request } from "express";
 
-import { UpdatePedidoDoadorEncontradoUseCase } from "./updatePedidoDoadorEncontradoUseCase";
+import { UpdatePedidoDoadorEncontradoUseCase } from "./UpdatePedidoDoadorEncontradoUseCase";
 
 class UpdatePedidoDoadorEncontradoController {
   constructor(

@@ -1,7 +1,7 @@
 import { AlunosRepository } from "../../repositories/AlunosRepository";
 import { PedidosRepository } from "../../repositories/PedidosRepository";
-import { ListPedidosByAlunosController } from "./listPedidosByAlunosController";
-import { ListPedidosByAlunosUseCase } from "./listPedidosByAlunosUseCase";
+import { ListPedidosByAlunosController } from "./ListPedidosByAlunosController";
+import { ListPedidosByAlunosUseCase } from "./ListPedidosByAlunosUseCase";
 
 export default (): ListPedidosByAlunosController => {
   const pedidosRepository = new PedidosRepository();

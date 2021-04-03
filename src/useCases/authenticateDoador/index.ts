@@ -1,6 +1,6 @@
 import { DoadoresRepository } from "../../repositories/DoadoresRepository";
-import { AuthenticateDoadorController } from "./authenticateDoadorController";
-import { AuthenticateDoadorUseCase } from "./authenticateDoadorUseCase";
+import { AuthenticateDoadorController } from "./AuthenticateDoadorController";
+import { AuthenticateDoadorUseCase } from "./AuthenticateDoadorUseCase";
 
 export default (): AuthenticateDoadorController => {
   const doadoresRepository = new DoadoresRepository();

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { ListPedidosByAlunosAguardandoDoadorUseCase } from "./listPedidosByAlunosAguardandoDoadorUseCase";
+import { ListPedidosByAlunosAguardandoDoadorUseCase } from "./ListPedidosByAlunosAguardandoDoadorUseCase";
 
 class ListPedidosByALunosAguardandoDoadorController {
   constructor(

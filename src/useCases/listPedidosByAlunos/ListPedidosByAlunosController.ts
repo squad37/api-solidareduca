@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { ListPedidosByAlunosUseCase } from "./listPedidosByAlunosUseCase";
+import { ListPedidosByAlunosUseCase } from "./ListPedidosByAlunosUseCase";
 
 class ListPedidosByAlunosController {
   constructor(private listPedidosByALunosUseCase: ListPedidosByAlunosUseCase) {}
