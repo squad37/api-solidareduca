@@ -6,6 +6,10 @@ class ListEscolasByNomeUseCase {
 
   async execute(nome:string): Promise<Escola> {
     const escola = await this.escolasRepository.listByNome(nome);
+    
+    if (!escola) {
+      throw new Error("Escola não cadastrada");
+    }
       
     return escola;
   }
