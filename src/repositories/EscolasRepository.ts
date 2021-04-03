@@ -1,4 +1,4 @@
-import { Repository, EntityRepository, getRepository } from "typeorm";
+import { Repository, EntityRepository, getRepository, ILike } from "typeorm";
 
 import { Escola } from "../entities/Escola";
 
@@ -48,11 +48,33 @@ class EscolasRepository {
     return escolas;
   }
 
-  async listByNome(nome:string): Promise<Escola> {
-    const escola = await this.repository.findOne({ nome });
+  async searchByNome(nome: string): Promise<Escola[]> {
+    const escola = await this.repository.find({
+      where: {
+        nome: ILike(`%${nome}%`),
+      },
+    });
     return escola;
   }
 
+  async searchByUf(uf: string): Promise<Escola[]> {
+    const escola = await this.repository.find({
+      where: {
+        uf: ILike(`%${uf}%`),
+      },
+    });
+    return escola;
+  }
+
+  async searchByNomeAndUf(nome: string, uf: string): Promise<Escola[]> {
+    const escola = await this.repository.find({
+      where: {
+        nome: ILike(`%${nome}%`),
+        uf: ILike(`%${uf}%`),
+      },
+    });
+    return escola;
+  }
 }
 
 export { EscolasRepository };
