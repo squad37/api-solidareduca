@@ -37,7 +37,7 @@ export class CreatePedidos1616824957084 implements MigrationInterface {
           {
             name: "situacao",
             type: "varchar",
-            default: "'aguardando doador'",
+            default: "'Aguardando Doador'",
           },
           {
             name: "created_at",

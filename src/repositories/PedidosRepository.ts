@@ -54,7 +54,7 @@ class PedidosRepository {
   // Retorna todos os pedidos de um aluno na situação: aguardando doador
   async findByAlunoAguardandoDoador(id_aluno: string): Promise<Pedido[]> {
     const pedidos = await this.repository.find({
-      where: { id_aluno, situacao: "aguardando doador" },
+      where: { id_aluno, situacao: "Aguardando Doador", deleted: false },
       order: {
         created_at: "ASC",
       },
@@ -100,7 +100,7 @@ class PedidosRepository {
         local_entrega,
         endereco_entrega,
         previsao_entrega,
-        situacao: "doador encontrado",
+        situacao: "Doador Encontrado",
       })
       .where({ id: id_pedido })
       .execute();
@@ -120,7 +120,7 @@ class PedidosRepository {
       .update()
       .set({
         mensagem_agradecimento,
-        situacao: "Doação concluída",
+        situacao: "Doação Concluída",
       })
       .where({ id: id_pedido })
       .execute();
@@ -128,6 +128,19 @@ class PedidosRepository {
     const pedido = await this.repository.findOne({ id: id_pedido });
 
     return pedido;
+  }
+
+  // Altera o pedido para deleted: True
+  async deletedByAluno(id_pedido: string): Promise<void> {
+    await this.repository
+      .createQueryBuilder()
+      .update()
+      .set({
+        deleted: true,
+        situacao: "Pedido Cancelado",
+      })
+      .where({ id: id_pedido })
+      .execute();
   }
 }
 

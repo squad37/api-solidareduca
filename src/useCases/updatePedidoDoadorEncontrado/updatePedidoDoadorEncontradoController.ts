@@ -30,7 +30,7 @@ class UpdatePedidoDoadorEncontradoController {
       await this.updatePedidoDoadorEncontradoUseCase.execute(doadorEncontrado);
 
       return response.status(200).json({
-        message: "Pedido alterado com sucesso --- Situação: doador encontrado",
+        message: "Pedido alterado com sucesso --- Situação: Doador Encontrado",
       });
     } catch (error) {
       return response.status(400).json({ error: error.message });
