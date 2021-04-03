@@ -1049,9 +1049,14 @@ Exemplo de como fica um determinado pedido após a utilização desta rota:
     }
   }
 ```
+### PATCH `pedidos/:id_pedido/doador`
+
+A rota recebe o `id_pedido ` pelo `request.params`. Esta rota é para o doador poder cancelar o seu interesse em um determinado pedido que esta na situação: `Doador Encontrado`. Se o pedido estiver em qualquer outra situação como: `Aguardando Doador `, `Doação Concluída` ou `Pedido Cancelado`, não será possível cancelar o interesse.
+Como utilizar: `http://localhost:3333/pedidos/e86a576b-1697-4817-8c94-fe539417c8b9/doador`
+
 ### DELETE `pedidos/:id_pedido/aluno`
 
-A rota recebe o `id_pedido ` pelo `request.params`. Esta rota é para o Aluno poder cancelar o seu pedido que esta Aguardando Doador. Se o pedido estiver em qualquer outra situação como: `Doador Encontrado `, `Doação Concluída` ou `Pedido Cancelado`, não será possível cancelar. Caso o pedido esteja na situação de Doador Encontrado, o Aluno terá que entrar em contato com o Doador para informar que não necessita mais do produto, para o Doador cancelar o interesse no pedido e o pedido voltar para a Situação: Aguardando Doador.
+A rota recebe o `id_pedido ` pelo `request.params`. Esta rota é para o Aluno poder cancelar o seu pedido que esta na situação: `Aguardando Doador`. Se o pedido estiver em qualquer outra situação como: `Doador Encontrado `, `Doação Concluída` ou `Pedido Cancelado`, não será possível cancelar. Caso o pedido esteja na situação de Doador Encontrado, o Aluno terá que entrar em contato com o Doador para informar que não necessita mais do produto, para o Doador cancelar o interesse no pedido e o pedido voltar para a Situação: Aguardando Doador.
 
 Como utilizar: `http://localhost:3333/pedidos/e86a576b-1697-4817-8c94-fe539417c8b9/aluno`
 
@@ -1126,7 +1131,7 @@ Exemplo de retorno:
   },
   {
     "id": "c7f3535c-632e-423c-920d-86a006ac023b",
-    "nome": "Caderno 20 Matérias/pedidos/e86a576b-1697-4817-8c94-fe539417c8b9/alunode-0a4df7928b4f",
+    "nome": "Caderno 20 Matérias",
     "nome": "Mochila",
     "created_at": "2021-04-02T16:15:41.512Z",
     "updated_at": "2021-04-02T16:15:41.512Z"

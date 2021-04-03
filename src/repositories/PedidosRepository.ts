@@ -142,6 +142,17 @@ class PedidosRepository {
       .where({ id: id_pedido })
       .execute();
   }
+
+  async cancelByDoador(id_pedido: string): Promise<void> {
+    await this.repository
+      .createQueryBuilder()
+      .update()
+      .set({
+        situacao: "Aguardando Doador",
+      })
+      .where({ id: id_pedido })
+      .execute();
+  }
 }
 
 export { PedidosRepository };
