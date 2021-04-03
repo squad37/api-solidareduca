@@ -28,6 +28,9 @@ class Doador {
   pontos: number;
 
   @Column()
+  telefone: string;
+
+  @Column()
   cep: string;
 
   @Column()

@@ -20,7 +20,7 @@ Desenvolvemos também um **ranking** para as **escolas**, com o objetivo delas d
 
 ### POST `/alunos`
 
-A rota recebe `nome email senha cpf cep uf endereco nome_responsavel id_escola` dentro do corpo da requisição.
+A rota recebe `nome email senha cpf telefone cep uf endereco nome_responsavel id_escola` dentro do corpo da requisição.
 
 É criado um objeto com as seguintes informações:  
 
@@ -880,9 +880,6 @@ Retorno:
   }
 ]
 ```
-
-
-
 ### PUT `/pedidos/:id_pedido/doador-encontrado`
 
 A rota recebe `id_pedido`pelo `request.params`, `id_doador doador_anonimo local_entrega endereco_entrega previsao_entrega` pelo corpo da requisição. Altera a situação do pedido, de `aguardando doador` para `doador encontrado`
@@ -1063,7 +1060,7 @@ Como utilizar: `http://localhost:3333/pedidos/e86a576b-1697-4817-8c94-fe539417c8
 
 ### POST `/doadores`
 
-A rota recebe `nome email senha cpf cep uf endereco`  do corpo da requisição.
+A rota recebe `nome email senha cpf telefone cep uf endereco`  do corpo da requisição.
 
 É criado um objeto com as seguintes informações:  
 

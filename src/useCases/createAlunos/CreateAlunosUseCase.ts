@@ -8,6 +8,7 @@ interface IRequest {
   email: string;
   senha: string;
   cpf: string;
+  telefone: string;
   cep: string;
   uf: string;
   endereco: string;
@@ -26,6 +27,7 @@ class CreateAlunosUseCase {
     email,
     senha,
     cpf,
+    telefone,
     cep,
     uf,
     endereco,
@@ -61,6 +63,7 @@ class CreateAlunosUseCase {
       email,
       senha: senhaHash,
       cpf,
+      telefone,
       cep,
       uf,
       endereco,

@@ -7,6 +7,7 @@ interface IRequest {
   email: string;
   senha: string;
   cpf: string;
+  telefone: string;
   cep: string;
   uf: string;
   endereco: string;
@@ -19,6 +20,7 @@ class CreateDoadoresUseCase {
     email,
     senha,
     cpf,
+    telefone,
     cep,
     uf,
     endereco,
@@ -43,6 +45,7 @@ class CreateDoadoresUseCase {
       email,
       senha: senhaHash,
       cpf,
+      telefone,
       cep,
       uf,
       endereco,
