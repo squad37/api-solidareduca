@@ -1,6 +1,6 @@
+import { AlunosRepository } from "../../repositories/AlunosRepository";
 import { MateriaisRepository } from "../../repositories/MateriaisRepository";
 import { PedidosRepository } from "../../repositories/PedidosRepository";
-import { AlunosRepository } from "../../repositories/AlunosRepository";
 
 interface IRequest {
   id_aluno: string;
@@ -12,7 +12,7 @@ class CreatePedidosUseCase {
   constructor(
     private pedidosRepository: PedidosRepository,
     private alunosRepository: AlunosRepository,
-    private materiaisRepository: MateriaisRepository,
+    private materiaisRepository: MateriaisRepository
   ) {}
 
   async execute(pedido: IRequest): Promise<void> {

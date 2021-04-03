@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import createPedidosController from "../useCases/createPedidos";
+import deletePedidoByAlunoController from "../useCases/deletePedidoByAluno";
 import finishPedidoController from "../useCases/finishPedido";
 import listPedidosController from "../useCases/listPedidos";
 import listPedidosByAlunosController from "../useCases/listPedidosByAlunos";
@@ -12,6 +13,10 @@ const pedidosRoutes = Router();
 
 pedidosRoutes.post("/", (request, response) => {
   return createPedidosController().handle(request, response);
+});
+
+pedidosRoutes.delete("/:id_pedido/aluno", (request, response) => {
+  return deletePedidoByAlunoController().handle(request, response);
 });
 
 pedidosRoutes.put("/:id_pedido/doador-encontrado", (request, response) => {

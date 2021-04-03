@@ -40,6 +40,9 @@ class Pedido {
   doador: Doador;
 
   @Column()
+  deleted: boolean;
+
+  @Column()
   doador_anonimo: boolean;
 
   @Column()

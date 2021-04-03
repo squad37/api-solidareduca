@@ -21,12 +21,16 @@ class UpdatePedidoDoadorEncontradoUseCase {
       throw new Error("Pedido não encontrado!");
     }
 
+    if (pedidoExists.situacao !== "Aguardando Doador") {
+      throw new Error("Este pedido não está Aguardando um Doador!");
+    }
+
     const pedidoAtualizado = await this.pedidosRepository.updateDoadorEncontrado(
       doadorEncontrado
     );
 
     // Verifica se realmente o pedido foi atualizado para a situação = doador encontrado
-    if (pedidoAtualizado.situacao !== "doador encontrado") {
+    if (pedidoAtualizado.situacao !== "Doador Encontrado") {
       throw new Error("Pedido não atualizado!");
     }
   }
