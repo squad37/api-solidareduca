@@ -7,13 +7,23 @@ class CreateDoadoresController {
 
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const { nome, email, senha, cpf, cep, uf, endereco } = request.body;
+      const {
+        nome,
+        email,
+        senha,
+        cpf,
+        telefone,
+        cep,
+        uf,
+        endereco,
+      } = request.body;
 
       const doador = {
         nome,
         email,
         senha,
         cpf,
+        telefone,
         cep,
         uf,
         endereco,

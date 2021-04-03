@@ -1,17 +1,18 @@
 import { MigrationInterface, QueryRunner, TableColumn } from "typeorm";
 
-export class AddColumnCpfDoador1617132931205 implements MigrationInterface {
+export class AddColumnTelefoneDoador1617471350118
+  implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.addColumn(
       "doadores",
       new TableColumn({
-        name: "cpf",
+        name: "telefone",
         type: "varchar",
       })
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropColumn("doadores", "cpf");
+    await queryRunner.dropColumn("doadores", "telefone");
   }
 }

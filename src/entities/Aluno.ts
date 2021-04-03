@@ -29,6 +29,9 @@ class Aluno {
   cpf: string;
 
   @Column()
+  telefone: string;
+
+  @Column()
   cep: string;
 
   @Column()
