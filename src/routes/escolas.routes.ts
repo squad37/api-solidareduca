@@ -16,7 +16,7 @@ escolasRoutes.get("/ranking", (request, response) => {
   return listEscolasByRankingController().handle(request, response);
 });
 
-escolasRoutes.get("/buscar", (request, response) => {
+escolasRoutes.get("/:nome", (request, response) => {
   return listEscolasByNomeController().handle(request, response);
 });
 
