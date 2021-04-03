@@ -317,6 +317,48 @@ Retorna o ranking de todas as escolas cadastradas. Caso tenha escolas com pontua
     }
 ]
 ```
+### GET `/escolas/search`
+
+A rota recebe o `nome ` e `uf ` pelo `request.query. Retorna todas as escolas em relação a esse filtro. 
+
+Como utilizar: http://localhost:3333/escolas/search/?nome=enio&uf=sp
+
+Retorno: 
+
+```jsx
+[
+  {
+    "id": "1e91796f-8bc2-4f91-9756-4b34cf597861",
+    "id_inep": "35012087",
+    "nome": "ENIO VILAS BOAS PROFESSOR",
+    "parceira": true,
+    "pontos": 0,
+    "restricao_atendimento": "ESCOLA EM FUNCIONAMENTO E SEM RESTRIÇÃO DE ATENDIMENTO",
+    "uf": "SP",
+    "municipio": "São Vicente",
+    "localizacao": "Urbana",
+    "localizacao_diferenciada": "A escola não está em área de localização diferenciada",
+    "endereco": "JOSE JOAQUIM DE AZEVEDO, 1166 RUA. CIDADE NAUTICA. 11355-040 São Vicente - SP.",
+    "telefone": "(13) 34641983",
+    "categoria_administrativa": "Pública",
+    "dependencia_administrativa": "Estadual",
+    "categoria_escola_privada": "Não Informado",
+    "conveniada_poder_publico": "Não",
+    "regulamentacao_conselho_educacao": "Sim",
+    "porte": "Entre 201 e 500 matrículas de escolarização",
+    "modalidade": "Ensino Fundamental",
+    "outras_ofertas_educacionais": "Atendimento Educacional Especializado",
+    "latitude": "-23.94017",
+    "longitude": "-46.4081876",
+    "consultar_ideb": "http://idebescola.inep.gov.br/ideb/escola/dadosEscola/35012087",
+    "created_at": "2021-04-03T18:03:36.607Z",
+    "updated_at": "2021-04-03T18:03:36.607Z"
+  }
+]
+```
+
+
+
 ### POST `/pedidos`
 
 A rota recebe `id_aluno id_material quantidade` dentro do corpo da requisição. É criado um objeto com as seguintes informações:

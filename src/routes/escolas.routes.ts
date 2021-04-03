@@ -1,10 +1,8 @@
 import { Router } from "express";
 
 import listEscolasController from "../useCases/listEscolas";
-import listEscolasByNomeController from "../useCases/listEscolasByNome";
 import listEscolasByRankingController from "../useCases/listEscolasByRanking";
-
-
+import searchEscolasController from "../useCases/searchEscolas";
 
 const escolasRoutes = Router();
 
@@ -16,8 +14,8 @@ escolasRoutes.get("/ranking", (request, response) => {
   return listEscolasByRankingController().handle(request, response);
 });
 
-escolasRoutes.get("/:nome", (request, response) => {
-  return listEscolasByNomeController().handle(request, response);
+escolasRoutes.get("/search", (request, response) => {
+  return searchEscolasController().handle(request, response);
 });
 
 export { escolasRoutes };
