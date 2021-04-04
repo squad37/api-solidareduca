@@ -926,8 +926,8 @@
         "/escolas/search": {
             "get": {
                 "tags": ["Escola"],
-                "summary": "Exibe o ranking de todas as escolas",
-                "description": "Lista o ranking de todas as escolas cadastradas em relação a pontuação de cada uma.",
+                "summary": "Pesquisa de escolas",
+                "description": "Pesquisa de escolas realizada através de 2 filtros: Nome e UF",
                 "parameters": [
                     {
                         "name": "nome",
