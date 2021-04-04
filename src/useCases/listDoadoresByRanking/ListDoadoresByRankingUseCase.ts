@@ -6,6 +6,11 @@ class ListDoadoresByRankingUseCase {
 
   async execute(): Promise<Doador[]> {
     const doadores = await this.doadoresRepository.listByRanking();
+
+    if (doadores.length === 0) {
+      throw new Error("Nenhum doador cadastrado!");
+    }
+
     return doadores;
   }
 }

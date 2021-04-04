@@ -7,6 +7,10 @@ class ListMateriaisUseCase {
   async execute(): Promise<Material[]> {
     const materiais = await this.materiaisRepository.list();
 
+    if (materiais.length === 0) {
+      throw new Error("Nenhum material encontrado!");
+    }
+
     return materiais;
   }
 }

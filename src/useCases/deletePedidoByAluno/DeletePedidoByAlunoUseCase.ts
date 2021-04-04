@@ -12,7 +12,7 @@ class DeletePedidoByAlunoUseCase {
 
     if (pedidoExists.situacao !== "Aguardando Doador") {
       throw new Error(
-        "O pedido apenas pode ser cancelado pelo aluno se estiver na situação: Aguardando Doador. Se o pedido estiver na situação: Doador Encontrado, entre em contato com o Doador para avisar que não precisa mais do item, para posteriormente o Doador cancelar e o pedido voltar para a situação: Aguardando Doador"
+        "O pedido apenas pode ser cancelado pelo aluno se estiver na situação: Aguardando Doador. Se o pedido estiver na situação: Doador Encontrado, entre em contato com o Doador para informar que não necessita mais do item, para posteriormente o Doador cancelar o pedido."
       );
     }
 

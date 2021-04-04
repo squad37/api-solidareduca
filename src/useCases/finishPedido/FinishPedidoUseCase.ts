@@ -26,7 +26,7 @@ class FinishPedidoUseCase {
 
     if (pedidoExists.situacao !== "Doador Encontrado") {
       throw new Error(
-        "Apenas é possível finalizar o pedido se o mesmo estiver na situação: Doador Encontrado"
+        "Apenas é possível finalizar o pedido se o mesmo estiver na situação: Doador Encontrado!"
       );
     }
 

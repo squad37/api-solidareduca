@@ -6,6 +6,11 @@ class ListEscolasByRankingUseCase {
 
   async execute(): Promise<Escola[]> {
     const escolas = await this.escolasRepository.listByRanking();
+
+    if (escolas.length === 0) {
+      throw new Error("Nenhuma escola encontrada!");
+    }
+
     return escolas;
   }
 }
