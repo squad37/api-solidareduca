@@ -21,7 +21,7 @@ class ListPedidosByAlunosAguardandoDoadorUseCase {
 
     if (pedidos.length === 0) {
       throw new Error(
-        "Este aluno não possuí nenhum pedido na situação: aguardando-doador"
+        "Este aluno não possuí nenhum pedido na situação: Aguardando Doador"
       );
     }
 
