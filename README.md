@@ -1,7 +1,7 @@
 <h1 align="center">API Solidareduca</h1>
 
 <h3 align="center">
-    API Referente ao Projeto SolidarEduca do Programa de Formação FCamara.
+    API Referente ao Projeto Solidareduca do Programa de Formação FCamara.
 </h3>
 
 <h4 align="center">
@@ -36,7 +36,7 @@ Solidareduca é um projeto que tem como objetivo possibilitar a conexão entre a
 
 - [x] Listagem de todas as escolas cadastradas
 - [x] Ranking de escolas cadastradas
-    - [x] A Escola tem a possibilidade de ser parceira do site e receber doações para um determinado aluno na própria Escola. A cada doação recebida, a Escola ganha 10 pontos no ranking.
+    - [x] A escola tem a possibilidade de ser parceira do site e receber doações para um determinado aluno na própria escola. A cada doação recebida, a escola ganha 10 pontos no ranking.
 - [x] Ranking de doadores cadastrados
   - [x] A cada doação realizada, o doador ganha 1 ponto no ranking.
 
@@ -57,9 +57,9 @@ Solidareduca é um projeto que tem como objetivo possibilitar a conexão entre a
 
 ## 🔸 Como executar o projeto
 
-- É necessário ter instalado na máquina o [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) e o [Postgresql](https://www.postgresql.org/). Em relação ao [Postgresql](https://www.postgresql.org/), foi utilizado no projeto a versão: 12.3.
+- É necessário ter instalado o [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) e o [Postgresql](https://www.postgresql.org/). Em relação ao [Postgresql](https://www.postgresql.org/), foi utilizado no projeto a versão: 12.3.
 
-- É necessário criar um banco de dados chamado solidareduca: `create database solidareduca;`. No projeto utilizamos o [Beekeeper-Studio](https://www.beekeeperstudio.io/) para realizar esta criação e gerenciar o banco.
+- É necessário criar um banco de dados chamado solidareduca: `create database solidareduca;`. No projeto utilizamos o [Beekeeper-Studio](https://www.beekeeperstudio.io/) para realizar esta criação e gerenciar o banco de dados.
 
 - É necessário ter instalado também um gerenciador de pacotes, podendo ser o [Yarn](https://yarnpkg.com/), ou [Npm](https://www.npmjs.com/). Nos passos abaixo, será utilizado o `yarn`.
 
@@ -88,12 +88,14 @@ Após ter realizado os passos anteriores, realizar os comandos abaixo:
 ## 🛠 Tecnologias
 
 Essa aplicacão foi desenvolvida com as seguintes ferramentas:
+
 - [Express](https://expressjs.com/pt-br/)
 - [Typescript](https://www.typescriptlang.org/)
 - [TypeORM](https://typeorm.io)
 - [Postgresql](https://www.postgresql.org/)
 - [BeekeeperStudio](https://www.beekeeperstudio.io/)
 - [Swagger](https://swagger.io/)
+- [Insomnia](https://insomnia.rest/)
 
 ---
 
