@@ -55,7 +55,7 @@ Solidareduca é um projeto que tem como objetivo possibilitar a conexão entre a
   
 ---
 
-## 🔸 Como executar o projeto
+## 🔶 Como executar o projeto
 
 - É necessário ter instalado o [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) e o [Postgresql](https://www.postgresql.org/). Em relação ao [Postgresql](https://www.postgresql.org/), foi utilizado no projeto a versão: 12.3.
 
